@@ -1,0 +1,6 @@
+{
+  "desc": "equations",
+  "deps": [ "coq-reals" ],
+  "pkgs": [ { "pkg_id": [ "Equations" ], "vo_files": [], "cma_files": [] } ],
+  "archive": "equations.coq-pkg"
+}
