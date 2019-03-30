@@ -119,6 +119,33 @@
         [ "ssrbool.vo", "d41d8cd98f00b204e9800998ecf8427e" ]
       ],
       "cma_files": [ [ "ssreflect_plugin.cmo", "d41d8cd98f00b204e9800998ecf8427e" ] ]
+    },
+    {
+      "pkg_id": [ "mathcomp", "ssreflect" ],
+      "vo_files": [
+        [ "tuple.vo", "d41d8cd98f00b204e9800998ecf8427e" ],
+        [ "prime.vo", "d41d8cd98f00b204e9800998ecf8427e" ],
+        [ "finset.vo", "d41d8cd98f00b204e9800998ecf8427e" ],
+        [ "bigop.vo", "d41d8cd98f00b204e9800998ecf8427e" ],
+        [ "div.vo", "d41d8cd98f00b204e9800998ecf8427e" ],
+        [ "fintype.vo", "d41d8cd98f00b204e9800998ecf8427e" ],
+        [ "all_ssreflect.vo", "d41d8cd98f00b204e9800998ecf8427e" ],
+        [ "generic_quotient.vo", "d41d8cd98f00b204e9800998ecf8427e" ],
+        [ "choice.vo", "d41d8cd98f00b204e9800998ecf8427e" ],
+        [ "ssrnotations.vo", "d41d8cd98f00b204e9800998ecf8427e" ],
+        [ "fingraph.vo", "d41d8cd98f00b204e9800998ecf8427e" ],
+        [ "ssrmatching.vo", "d41d8cd98f00b204e9800998ecf8427e" ],
+        [ "ssreflect.vo", "d41d8cd98f00b204e9800998ecf8427e" ],
+        [ "ssrfun.vo", "d41d8cd98f00b204e9800998ecf8427e" ],
+        [ "finfun.vo", "d41d8cd98f00b204e9800998ecf8427e" ],
+        [ "ssrbool.vo", "d41d8cd98f00b204e9800998ecf8427e" ],
+        [ "eqtype.vo", "d41d8cd98f00b204e9800998ecf8427e" ],
+        [ "seq.vo", "d41d8cd98f00b204e9800998ecf8427e" ],
+        [ "ssrnat.vo", "d41d8cd98f00b204e9800998ecf8427e" ],
+        [ "binomial.vo", "d41d8cd98f00b204e9800998ecf8427e" ],
+        [ "path.vo", "d41d8cd98f00b204e9800998ecf8427e" ]
+      ],
+      "cma_files": []
     }
   ],
   "archive": "init.coq-pkg",

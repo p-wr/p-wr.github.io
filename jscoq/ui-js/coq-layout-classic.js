@@ -28,7 +28,7 @@ class CoqLayoutClassic {
     <div id="toolbar">
       <div class="exits">
         <i>js+</i><!--
-        --><a href="https://coq/inria.fr"><!--
+        --><a href="https://coq.inria.fr"><!--
           --><img src="https://coq.inria.fr/files/barron_logo.png" alt="Coq" height="35" style="vertical-align: middle">
         <a>
         <!-- 
@@ -149,10 +149,10 @@ class CoqLayoutClassic {
     }
 
     // This is still not optimal.
-    update_goals(str) {
+    update_goals(content) {
         // TODO: Add diff/history of goals.
         // XXX: should send a message.
-        this.proof.innerHTML = str;
+        $(this.proof).html(content);
     }
 
     // Add a log event received from Coq.
