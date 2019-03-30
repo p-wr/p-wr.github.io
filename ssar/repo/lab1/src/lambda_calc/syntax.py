@@ -1,13 +1,14 @@
-
 from functools import reduce
+from typing import Optional, Tuple
+
 from adt.tree import Tree
 from parsing.earley.earley import Grammar, Parser, ParseTrees
 from parsing.silly import SillyLexer
 
+from adt.tree.viz import dot_print
 
 
 class LambdaParser(object):
-
     TOKENS = r"(let|in)(?![\w\d_])   (?P<id>[^\W\d]\w*)   (?P<num>\d+)   [\\.()=]".split()
     GRAMMAR = r"""
     E    ->  \. | let_    |   E1  |  E1'
@@ -25,20 +26,20 @@ class LambdaParser(object):
         self.tokenizer = SillyLexer(self.TOKENS)
         self.grammar = Grammar.from_string(self.GRAMMAR)
 
-    def __call__(self, program_text):
+    def __call__(self, program_text: str) -> Optional[Tree]:
         tokens = list(self.tokenizer(program_text))
 
         earley = Parser(grammar=self.grammar, sentence=tokens, debug=False)
         earley.parse()
-        
+
         if earley.is_valid_sentence():
             trees = ParseTrees(earley)
-            assert(len(trees) == 1)
+            assert (len(trees) == 1)
             return self.postprocess(trees.nodes[0])
         else:
             return None
-            
-    def postprocess(self, t):
+
+    def postprocess(self, t: Tree) -> Tree:
         if t.root in ['γ', 'E', 'E0', 'E1', "E1'"] and len(t.subtrees) == 1:
             return self.postprocess(t.subtrees[0])
         elif t.root == 'E0' and t.subtrees[0].root == '(':
@@ -60,9 +61,11 @@ Should be called as pretty(e), admitting the default values for `parent` and `fo
 these values are suitable for the top-level term.
 They are used subsequently by recursive calls.
 """
-def pretty(expr, parent=('.', 0), follow=''):
+
+
+def pretty(expr: Tree, parent: Tuple[str, int] = ('.', 0), follow: str = '') -> str:
     if expr.root in ['id', 'num']: return expr.subtrees[0].root
-    if expr.root == '\\': 
+    if expr.root == '\\':
         tmpl = r"\%s. %s"
         if parent == ('@', 0) or parent[0] == follow == '@': tmpl = "(%s)" % tmpl
     elif expr.root == '@':
@@ -70,19 +73,19 @@ def pretty(expr, parent=('.', 0), follow=''):
         if parent == ('@', 1): tmpl = "(%s)" % tmpl
     else:
         return str(expr)
-    
+
     n = len(expr.subtrees)
-    return tmpl % tuple(pretty(s, (expr.root, i), expr.root if i < n-1 else follow)
+    return tmpl % tuple(pretty(s, (expr.root, i), expr.root if i < n - 1 else follow)
                         for i, s in enumerate(expr.subtrees))
 
 
-
+#
 if __name__ == '__main__':
-    
     expr = LambdaParser()(r"\x. x \z g. y 6")
-    
+    expr2 = LambdaParser()(r"\x. x \z g. y 6 5 4")
     if expr:
         print(">> Valid expression.")
         print(expr)
+        # dot_print(expr)
     else:
         print(">> Invalid expression.")
