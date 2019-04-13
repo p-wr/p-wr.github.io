@@ -1,7 +1,7 @@
 #!/bin/bash
 
 here=`pwd`
-there=~/var/ext/jscoq
+there=~/var/ext/jscoq-v8.9
 
 cd $there
 
