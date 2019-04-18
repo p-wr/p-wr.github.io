@@ -78,8 +78,9 @@ Section Naturals.
   Qed.
   
   (*
-  Inductive ex (A : Type) (P : A -> Prop) : Prop :=
-    ex_intro : forall x : A, P x -> exists y, P y
+  Inductive le (n : nat) : nat -> Prop :=
+    le_n : n <= n
+  | le_S : forall m : nat, n <= m -> n <= S m
   *)
 
   Fixpoint le_0 n : 0 <= n :=
@@ -115,7 +116,7 @@ Section Naturals.
     reflexivity.
   Qed.
   
-  Lemma plus_1 : n + 1 = S n.
+  Lemma plus_n_1 : n + 1 = S n.
   Proof.
     induction n.
     - simpl. reflexivity.
@@ -134,7 +135,7 @@ Proof.
 Qed.
 
 
-Lemma sample1 : forall m n, m * (S n) = m * (1 + n).
+Lemma fsample1 : forall m n, m * (S n) = m * (1 + n).
 Proof.
   intros.
   apply f_equal.
@@ -144,7 +145,7 @@ Qed.
 Require Import PeanoNat.
 Import Nat.
 
-Lemma sample2 : forall m n, m * (S n) = m * (n + 1).
+Lemma fsample2 : forall m n, m * (S n) = m * (n + 1).
 Proof.
   intros.
   apply f_equal.
