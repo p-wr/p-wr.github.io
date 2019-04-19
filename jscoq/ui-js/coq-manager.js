@@ -234,6 +234,7 @@ class CoqManager {
         // Setup autocomplete
         this.loadSymbolsFrom(this.options.base_path + 'ui-js/symbols/init.symb.json');
         this.loadSymbolsFrom(this.options.base_path + 'ui-js/symbols/coq-arith.symb.json');
+        this.loadSymbolsFrom(this.options.base_path + 'ui-js/symbols/coq-collections.symb.json');
 
         // Keybindings setup
         // XXX: This should go in the panel init.
