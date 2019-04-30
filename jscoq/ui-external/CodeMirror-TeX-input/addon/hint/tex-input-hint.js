@@ -142,12 +142,13 @@
           cm.replaceSelection(" ");
         } } };
 
+        /*
       var cmplOpt = cm.getOption("hintOptions");
 
       cmplOpt = cmplOpt || {};
       cmplOpt['extraKeys'] = extraHintKeyMap;
       cm.setOption("hintOptions", cmplOpt);
-
+        */
     });
 
     CodeMirror.registerGlobalHelper("hint", "tex-input",
