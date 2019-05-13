@@ -259,7 +259,9 @@
         return 'bracket';
       }
 
-      stream.eatWhile(/[\w']/);
+      if (/\w/.text(ch))
+        stream.eatWhile(/[\w']/);
+
       var cur = stream.current(),
           kind = words[cur] || 'variable';
 
