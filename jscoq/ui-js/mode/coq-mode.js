@@ -259,7 +259,7 @@
         return 'bracket';
       }
 
-      if (/\w/.text(ch))
+      if (/\w/.test(ch))
         stream.eatWhile(/[\w']/);
 
       var cur = stream.current(),
