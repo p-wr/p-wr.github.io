@@ -100,6 +100,10 @@
       setCaption(filename);
     }
 
+    function uploadResource(filename, local_filename=filename) {
+      fetchResource(filename).then(txt => coq.coq.put(local_filename, txt));
+    }
+
     function openLocal(filename, default_filename) {
       var sp = coq.provider.snippets[0];
       sp.openLocal(filename).then((text) => {
@@ -249,6 +253,8 @@
           else
             $('#header .caption').html('<i class="first-time">← open the lab menu</i>');
           setupMenu();
+
+          uploadResource("lab5/hoare.v", "hoare.v");  /* exercise contains Load command */
         });
 
     window.addEventListener('beforeunload', () => {
