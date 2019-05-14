@@ -7,12 +7,12 @@ Load "./hoare".
 
 
 (*
-euclid(a, b):
-  while a != b do
-    if a > b then
-      a := a - b
-    else
-      b := b - a
+  euclid(a, b):
+    while a != b do
+      if a > b then
+        a := a - b
+      else
+        b := b - a
  *)
 
 Definition gt01 n m := if gt_dec n m then 1 else 0.
@@ -22,12 +22,15 @@ Notation "[ e1 `-` e2 ]" := (expr_op e1 sub e2).
 Notation "[ e1 `>` e2 ]" := (expr_op e1 gt01 e2).
 Notation "[ e1 `!=` e2 ]" := (expr_op e1 ne01 e2).
 
+Notation "$ v" := (expr_var v) (at level 7, format "$ v").
+Notation "# n" := (expr_num n) (at level 7, format "# n").
+
 
 Definition euclid_cmd :=
-  while [expr_var a `!=` expr_var b]
-        (if_then_else [expr_var a `>` expr_var b]
-                      (assign a [expr_var a `-` expr_var b])
-                      (assign b [expr_var b `-` expr_var a])).
+  while [$a `!=` $b]
+        (if_then_else [$a `>` $b]
+                      (assign a [$a `-` $b])
+                      (assign b [$b `-` $a])).
 
 
 (* Definition of divisibility + some syntactic sugar *)
@@ -37,8 +40,9 @@ Notation "( a | b )" := (divides a b).
 
 
 (* Control the behavior of `simpl` to allow more unfoldings.            *)
+(*                                                                      *)
 (* This should allow you to simplify a substitution term,               *)
-(*   e.g. subst (fun s => s a + 1 = 2) a [expr_var a `-` expr_num 1] s  *)
+(*   e.g. subst (fun s => s a + 1 = 2) a [$a `-` #1] s                  *)
 (*        ( in other words, (a + 1 = 2)[a - 1 / a] )                    *)
 (*     simplifies to                                                    *)
 (*        s a - 1 + 1 = 2                                               *)
@@ -49,21 +53,26 @@ Arguments gt01 n m / : simpl nomatch.
 Arguments ne01 n m / : simpl nomatch.
 
 
+(* Warm-up exercise:                               *)
+(*                                                 *)
+(*  {a = a0 /\ b = b0}  a := a - b  {a = a0 - b0}  *)
+(*                                                 *)
 Lemma warm_up a0 b0 : hoare (fun s => s a = a0 /\ s b = b0)
-                            (assign a [expr_var a `-` expr_var b])
+                            (assign a [$a `-` $b])
                             (fun s => s a = a0 - b0).
   (* Hint 1: use hoare_weaken_l (from hoare.v).
    * Hint 2: you can switch subgoals with Focus <num>. 
    *)
 
 
-    
+
+
 
 Module MainProof.
 
-  Definition c := if_then_else [expr_var a `>` expr_var b]
-                               (assign a [expr_var a `-` expr_var b])
-                               (assign b [expr_var b `-` expr_var a]).
+  Definition c := if_then_else [$a `>` $b]
+                               (assign a [$a `-` $b])
+                               (assign b [$b `-` $a]).
 
   Definition linv a0 b0 :=
     fun s => forall z, (z | a0) /\ (z | b0) <-> (z | s a) /\ (z | s b).
@@ -95,9 +104,16 @@ Module MainProof.
                                  c
                                  (linv a0 b0).
 
+
+
+
   Theorem euclid_post a0 b0 : hoare (fun s => s a = a0 /\ s b = b0)
                                     euclid_cmd
                                     (fun s => forall z, (z | a0) /\ (z | b0) <-> (z | s a)).
 
     
 End MainProof.
+
+
+
+
