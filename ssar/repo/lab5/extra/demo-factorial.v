@@ -1,4 +1,5 @@
 Require Import Arith.
+Require Import Omega.
 Import Nat.
 
 
@@ -38,8 +39,9 @@ Definition factorial_cmd :=
 Module MainProof.
 
   Definition c := seq (assign a [$a `*` $n])
-                      (assign n [$n `-` $1]).
+                      (assign n [$n `-` #1]).
 
+  (* Loop invariant:  a * n! = n0!  *)
   Definition linv n0 (s : state) := s a * fact (s n) = fact n0.
 
   (* Control the behavior of `simpl` to allow more unfoldings.            *)
@@ -54,6 +56,15 @@ Module MainProof.
   Arguments var_eq_dec !v1 !v2.
   Arguments gt01 n m / : simpl nomatch.
 
+  (*                                     *)
+  (*  { linv /\ n > 0 }  c  { linv }     *)
+  (*                                     *)
+  (* or:                                 *)
+  (*                                     *)
+  (*  { a * n! = n0 /\ n > 0 }           *)
+  (*  a := a * n ; n := n - 1            *)
+  (*  { a * n! = n0 }                    *)
+  (*                                     *)
   Lemma factorial_inv n0 : hoare (fun s => linv n0 s /\ s n > 0)
                                  c
                                  (linv n0).
@@ -64,46 +75,57 @@ Module MainProof.
     eapply hoare_weaken_l.
     Focus 2. apply hoare_assign.
     simpl.
+    (* now it's just a game of arithmetics *)
     firstorder.
-    destruct (s n) as [|k].
+    destruct (s n).
     - inversion H0.
     - simpl.
-      rewrite Nat.sub_0_r. rewrite <- Nat.mul_assoc. assumption.
+      rewrite sub_0_r. rewrite <- mul_assoc. assumption.
+  Qed.
+  
+  Lemma gt0_le x y : gt01 x y = 0 <-> x <= y.  Admitted.
+  Lemma gt1_gt x y : gt01 x y <> 0 <-> x > y.  Admitted.
+
+  (*                                                       *)
+  (*  { linv }  while (n > 0) do c  { linv /\ n <= 0 }     *)
+  (*                                                       *)
+  Lemma factorial_inv' n0 : hoare (linv n0)
+                                  (while [$n `>` #0] c)
+                                  (fun s => linv n0 s /\ s n = 0).
+  Proof.
+    eapply hoare_weaken_r.
+    - econstructor. simpl. eapply hoare_weaken_l.
+      + intros. rewrite gt1_gt in H. apply H.
+      + apply factorial_inv.
+    - simpl. intros. firstorder.
+      apply gt0_le in H0. omega.
   Qed.
 
+  Lemma final n0 s : linv n0 s -> s n = 0 -> s a = fact n0.
+  Admitted.
 
+  (*                                                 *)
+  (*     { n = n0 }  factorial  { a = n0! }          *)
+  (*                                                 *)
   Lemma factorial_correct n0 : hoare (fun s => s n = n0)
                                      factorial_cmd
                                      (fun s => s a = fact n0).
   Proof.
     econstructor.
     Focus 2.
-    { econstructor.
-      + intros; eassumption.
-      + econstructor. simpl.
-        eapply hoare_weaken_l.
-        Focus 2.
-        * apply factorial_inv.
-          
-        * firstorder.
-          { destruct (s n).
-            - firstorder.
-            - firstorder.
-          }
-      + simpl. firstorder. unfold linv in H.
-        destruct (s n).
-        * rewrite Nat.mul_1_r in H. eassumption.
-        * simpl in H0. discriminate.
+    { eapply hoare_weaken_r.
+      - apply factorial_inv'.
+      - simpl. intros. apply final; apply H.
     }
     Unfocus.
+    (*  { n = n0 }  a := 1  { a * n! = n0! }  *)
     eapply hoare_weaken_l.
-    Focus 2.
-    econstructor.
-    intros; unfold linv; simpl.
-    subst; firstorder.
+    Focus 2. constructor.
+    intros. unfold linv. simpl. rewrite H. omega.
   Qed.
 
 End MainProof.
+
 
 
 
