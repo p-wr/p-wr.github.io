@@ -13,8 +13,7 @@
 #header {
     font-size: 133%;
     padding-bottom: 0.2em;
-    margin-top: 0.2em;
-    margin-bottom: 0.15em;
+    margin-top: 0.3em;
     padding-left: 0.25em;
 }
 
@@ -38,10 +37,6 @@
     outline: 7px solid #cdd;
 }
 
-#header .caption {
-    position: relative;
-    top: 2px;  /* yuck */
-}
 #header .caption b {
     color: #444;
 }
@@ -131,4 +126,12 @@
 
 #lab-menu li[data-modified] button:active {
     opacity: 0.9;
+}
+
+/* Provide some scrolling space at the bottom of the editor */
+.CodeMirror-scroll {
+    padding-bottom: 0 !important;
+}
+.CodeMirror-lines {
+    padding-bottom: 75% !important;
 }

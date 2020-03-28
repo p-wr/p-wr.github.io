@@ -1,15 +1,12 @@
 #!/bin/bash
 
 here=`pwd`
-lab=~/var/workspace/Web.Verify.Coq
+lab=~/var/workspace/Teaching.SSAR.Labspace
 repo=~/var/workspace/Teaching.SSAR
 
-sed 's/dev-only.*//' $lab/src/lab.html | sed 's/ssar =.*/ssar = ".\/repo";/'  \
-     > ./ssar/lab.html
+sed 's/dev-only.*//' $lab/index.html > ./ssar/index.html
 
-sed 's/\.\.\/img/.\/img/' $lab/src/lab.css > ./ssar/lab.css
-
-cp -r ~/var/workspace/Web.Verify.Coq/img ./ssar/
+cp -r $lab/lab.css $lab/img ./ssar/
 
 mkdir -p ./ssar/repo
 cp -r $repo/* ./ssar/repo/
