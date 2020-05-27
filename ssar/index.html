@@ -4,7 +4,7 @@
     <meta http-equiv="content-type" content="text/html;charset=utf-8" />
     <meta name="description" content="An Online IDE for the Coq Theorem Prover" />
 
-    <!-- 
+    <!-- dev-only -->
     <script src="./node_modules/nwjs-kremlin/reload.js"></script>
     <script type="text/javascript">
     Reload.ignore('coq-external', 'coq-pkgs', 'ui-external');
@@ -54,6 +54,7 @@
 
     var jscoq_ids  = ['workspace'];
     var jscoq_opts = {
+        prelaunch: true,
         prelude:   true,
         init_pkgs: ['init'],
         all_pkgs:  ['init', 'coq-base', 'coq-collections', 'coq-arith', 'coq-reals'],
@@ -104,7 +105,8 @@
       setCaption(filename);
     }
 
-    function uploadResource(filename, local_filename=filename) {
+    async function uploadResource(filename, local_filename=filename) {
+      await coq.coq.when_created;
       fetchResource(filename).then(txt => coq.coq.put(local_filename, txt));
     }
 
@@ -206,6 +208,7 @@
 
     const emoji = {
       ':apple:':    '🍎',
+      ':smith:':    '🍏',
       ':pear:':     '🍐',
       ':lemon:':    '🍋',
       ':banana:':   '🍌',
@@ -221,24 +224,59 @@
       ':beer':      '🍺'
     };
 
-    function fold(placholder="...") {
+    function fold(placeholder="...") {
       var editor = coq.provider.snippets[0].editor,
           sel = editor.listSelections()[0];
 
-      if (emoji.hasOwnProperty(placholder))
-        placholder = emoji[placholder];
-
       if (sel) {
-        var el = $('<span>').text(placholder),
-            from = sel.anchor, to = sel.head;
+        _fold(editor, sel.anchor, sel.head, placeholder);
+      }
+    }
 
-        if (cursorLessThan(to, from)) [from, to] = [to, from];
+    function _fold(editor, from, to, placeholder) {
+      if (emoji.hasOwnProperty(placeholder))
+        placeholder = emoji[placeholder];
 
-        var mark = editor.markText(from, to,
-          {replacedWith: el[0], clearOnEnter: true});
+      var el = $('<span>').addClass('folded').text(placeholder);
 
-        el.click(() => { editor.setCursor(from); editor.focus(); });
-        el.dblclick(() => mark.clear());
+      if (cursorLessThan(to, from)) [from, to] = [to, from];
+
+      var mark = editor.markText(from, to,
+        {replacedWith: el[0]});
+
+      el.click(() => { editor.setCursor(from); editor.focus(); });
+      el.dblclick(() => mark.clear());
+      return mark;
+    }
+
+    function foldAll() {
+      var editor = coq.provider.snippets[0].editor;
+
+      for (let mo of editor.getValue().matchAll(/:= (.*)[.] \(\*(..)\*\)/g)) {
+        var s1 = editor.posFromIndex(mo.index + 3),
+            e1 = editor.posFromIndex(mo.index + 3 + mo[1].length),
+            s2 = editor.posFromIndex(mo.index + 3 + mo[1].length + 2),
+            e2 = editor.posFromIndex(mo.index + 3 + mo[1].length + 4 + mo[2].length + 2);
+        _fold(editor, s1, e1, mo[2]);
+        editor.markText(s2, e2, {collapsed: true});
+      }
+
+      for (let mo of editor.getValue().matchAll(/:= ([^\n.]* \(\*(..)\*\)[^]*?)[.]/g)) {
+        var s1 = editor.posFromIndex(mo.index + 3),
+            e1 = editor.posFromIndex(mo.index + 3 + mo[1].length);
+        _fold(editor, s1, e1, mo[2]);
+      }
+
+      for (let mo of editor.getValue().matchAll(/Proof. \(\*(..)\*\)[^]*?Qed[.]/g)) {
+        var s1 = editor.posFromIndex(mo.index),
+            e1 = editor.posFromIndex(mo.index + mo[0].length);
+        _fold(editor, s1, e1, mo[1]);
+      }
+
+      for (let mo of editor.getValue().matchAll(/\n\(\*(..)\*\)[^]*?(Abort|Qed)[.]\s+\(\*.*\*\)/g)) {
+        var s1 = editor.posFromIndex(mo.index + 1),
+            e1 = editor.posFromIndex(mo.index + mo[0].length);
+        _fold(editor, s1, e1, mo[1]);
       }
     }
 
