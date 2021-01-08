@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+
+<html  dir="rtl" lang="he" xml:lang="he">
+<head>
+    <title>קורס: 236347 - סינתזה של תוכנה והיסק אוטומטי - אביב</title>
+    <link rel="shortcut icon" href="../pluginfile.php/1/theme_fordson/favicon/1609879116/ICON.jpg" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="moodle, קורס: 236347 - סינתזה של תוכנה והיסק אוטומטי - אביב" />
+<link rel="stylesheet" type="text/css" href="../theme/yui_combo.php?rollup%252F3.17.2%252Fyui-moodlesimple-min.css" /><script id="firstthemesheet" type="text/css">/** Required in order to fix style inclusion problems in IE with YUI **/</script><link rel="stylesheet" type="text/css" href="../theme/styles.php/fordson/1609879116_1609877722/all-rtl.css" />
+<link rel="stylesheet" type="text/css" href="../blocks/accessibility/userstyles.php?instance_id=290665" />
+<script type="text/javascript">
+//<![CDATA[
+var M = {}; M.yui = {};
+M.pageloadstarttime = new Date();
+M.cfg = {"wwwroot":"https:\/\/moodle.technion.ac.il","sesskey":"TDiBmSuyyR","themerev":"1609879116","slasharguments":1,"theme":"fordson","iconsystemmodule":"core\/icon_system_fontawesome","jsrev":"1609877076","admin":"admin","svgicons":true,"usertimezone":"\u05d0\u05e1\u05d9\u05d4, \u05d9\u05e8\u05d5\u05e9\u05dc\u05d9\u05dd","contextid":1003037};var yui1ConfigFn = function(me) {if(/-skin|reset|fonts|grids|base/.test(me.name)){me.type='css';me.path=me.path.replace(/\.js/,'.css');me.path=me.path.replace(/\/yui2-skin/,'/assets/skins/sam/yui2-skin')}};
+var yui2ConfigFn = function(me) {var parts=me.name.replace(/^moodle-/,'').split('-'),component=parts.shift(),module=parts[0],min='-min';if(/-(skin|core)$/.test(me.name)){parts.pop();me.type='css';min=''}
+if(module){var filename=parts.join('-');me.path=component+'/'+module+'/'+filename+min+'.'+me.type}else{me.path=component+'/'+component+'.'+me.type}};
+YUI_config = {"debug":false,"base":"https:\/\/moodle.technion.ac.il\/lib\/yuilib\/3.17.2\/","comboBase":"https:\/\/moodle.technion.ac.il\/theme\/yui_combo.php?","combine":true,"filter":null,"insertBefore":"firstthemesheet","groups":{"yui2":{"base":"https:\/\/moodle.technion.ac.il\/lib\/yuilib\/2in3\/2.9.0\/build\/","comboBase":"https:\/\/moodle.technion.ac.il\/theme\/yui_combo.php?","combine":true,"ext":false,"root":"2in3\/2.9.0\/build\/","patterns":{"yui2-":{"group":"yui2","configFn":yui1ConfigFn}}},"moodle":{"name":"moodle","base":"https:\/\/moodle.technion.ac.il\/theme\/yui_combo.php?m\/1609877076\/","combine":true,"comboBase":"https:\/\/moodle.technion.ac.il\/theme\/yui_combo.php?","ext":false,"root":"m\/1609877076\/","patterns":{"moodle-":{"group":"moodle","configFn":yui2ConfigFn}},"filter":null,"modules":{"moodle-core-checknet":{"requires":["base-base","moodle-core-notification-alert","io-base"]},"moodle-core-notification":{"requires":["moodle-core-notification-dialogue","moodle-core-notification-alert","moodle-core-notification-confirm","moodle-core-notification-exception","moodle-core-notification-ajaxexception"]},"moodle-core-notification-dialogue":{"requires":["base","node","panel","escape","event-key","dd-plugin","moodle-core-widget-focusafterclose","moodle-core-lockscroll"]},"moodle-core-notification-alert":{"requires":["moodle-core-notification-dialogue"]},"moodle-core-notification-confirm":{"requires":["moodle-core-notification-dialogue"]},"moodle-core-notification-exception":{"requires":["moodle-core-notification-dialogue"]},"moodle-core-notification-ajaxexception":{"requires":["moodle-core-notification-dialogue"]},"moodle-core-chooserdialogue":{"requires":["base","panel","moodle-core-notification"]},"moodle-core-popuphelp":{"requires":["moodle-core-tooltip"]},"moodle-core-handlebars":{"condition":{"trigger":"handlebars","when":"after"}},"moodle-core-lockscroll":{"requires":["plugin","base-build"]},"moodle-core-tooltip":{"requires":["base","node","io-base","moodle-core-notification-dialogue","json-parse","widget-position","widget-position-align","event-outside","cache-base"]},"moodle-core-languninstallconfirm":{"requires":["base","node","moodle-core-notification-confirm","moodle-core-notification-alert"]},"moodle-core-dragdrop":{"requires":["base","node","io","dom","dd","event-key","event-focus","moodle-core-notification"]},"moodle-core-formchangechecker":{"requires":["base","event-focus","moodle-core-event"]},"moodle-core-blocks":{"requires":["base","node","io","dom","dd","dd-scroll","moodle-core-dragdrop","moodle-core-notification"]},"moodle-core-maintenancemodetimer":{"requires":["base","node"]},"moodle-core-event":{"requires":["event-custom"]},"moodle-core-actionmenu":{"requires":["base","event","node-event-simulate"]},"moodle-core_availability-form":{"requires":["base","node","event","event-delegate","panel","moodle-core-notification-dialogue","json"]},"moodle-backup-confirmcancel":{"requires":["node","node-event-simulate","moodle-core-notification-confirm"]},"moodle-backup-backupselectall":{"requires":["node","event","node-event-simulate","anim"]},"moodle-course-modchooser":{"requires":["moodle-core-chooserdialogue","moodle-course-coursebase"]},"moodle-course-util":{"requires":["node"],"use":["moodle-course-util-base"],"submodules":{"moodle-course-util-base":{},"moodle-course-util-section":{"requires":["node","moodle-course-util-base"]},"moodle-course-util-cm":{"requires":["node","moodle-course-util-base"]}}},"moodle-course-formatchooser":{"requires":["base","node","node-event-simulate"]},"moodle-course-management":{"requires":["base","node","io-base","moodle-core-notification-exception","json-parse","dd-constrain","dd-proxy","dd-drop","dd-delegate","node-event-delegate"]},"moodle-course-categoryexpander":{"requires":["node","event-key"]},"moodle-course-dragdrop":{"requires":["base","node","io","dom","dd","dd-scroll","moodle-core-dragdrop","moodle-core-notification","moodle-course-coursebase","moodle-course-util"]},"moodle-form-shortforms":{"requires":["node","base","selector-css3","moodle-core-event"]},"moodle-form-passwordunmask":{"requires":[]},"moodle-form-dateselector":{"requires":["base","node","overlay","calendar"]},"moodle-question-searchform":{"requires":["base","node"]},"moodle-question-chooser":{"requires":["moodle-core-chooserdialogue"]},"moodle-question-preview":{"requires":["base","dom","event-delegate","event-key","core_question_engine"]},"moodle-availability_completion-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-availability_date-form":{"requires":["base","node","event","io","moodle-core_availability-form"]},"moodle-availability_grade-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-availability_group-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-availability_grouping-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-availability_profile-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-mod_assign-history":{"requires":["node","transition"]},"moodle-mod_attendance-groupfilter":{"requires":["base","node"]},"moodle-mod_forum-subscriptiontoggle":{"requires":["base-base","io-base"]},"moodle-mod_hsuforum-io":{"requires":["base","io-base","io-form","io-upload-iframe","json-parse"]},"moodle-mod_hsuforum-article":{"requires":["base","node","event","router","core_rating","querystring","moodle-mod_hsuforum-io","moodle-mod_hsuforum-livelog","moodle-core-formchangechecker"]},"moodle-mod_hsuforum-livelog":{"requires":["widget"]},"moodle-mod_oublog-tagselector":{"requires":["base","node","autocomplete","autocomplete-filters","autocomplete-highlighters"]},"moodle-mod_oublog-savecheck":{"requires":["base","node","io","panel","moodle-core-notification-alert"]},"moodle-mod_quiz-quizbase":{"requires":["base","node"]},"moodle-mod_quiz-util":{"requires":["node","moodle-core-actionmenu"],"use":["moodle-mod_quiz-util-base"],"submodules":{"moodle-mod_quiz-util-base":{},"moodle-mod_quiz-util-slot":{"requires":["node","moodle-mod_quiz-util-base"]},"moodle-mod_quiz-util-page":{"requires":["node","moodle-mod_quiz-util-base"]}}},"moodle-mod_quiz-toolboxes":{"requires":["base","node","event","event-key","io","moodle-mod_quiz-quizbase","moodle-mod_quiz-util-slot","moodle-core-notification-ajaxexception"]},"moodle-mod_quiz-dragdrop":{"requires":["base","node","io","dom","dd","dd-scroll","moodle-core-dragdrop","moodle-core-notification","moodle-mod_quiz-quizbase","moodle-mod_quiz-util-base","moodle-mod_quiz-util-page","moodle-mod_quiz-util-slot","moodle-course-util"]},"moodle-mod_quiz-modform":{"requires":["base","node","event"]},"moodle-mod_quiz-autosave":{"requires":["base","node","event","event-valuechange","node-event-delegate","io-form"]},"moodle-mod_quiz-questionchooser":{"requires":["moodle-core-chooserdialogue","moodle-mod_quiz-util","querystring-parse"]},"moodle-message_airnotifier-toolboxes":{"requires":["base","node","io"]},"moodle-filter_glossary-autolinker":{"requires":["base","node","io-base","json-parse","event-delegate","overlay","moodle-core-event","moodle-core-notification-alert","moodle-core-notification-exception","moodle-core-notification-ajaxexception"]},"moodle-filter_mathjaxloader-loader":{"requires":["moodle-core-event"]},"moodle-editor_atto-editor":{"requires":["node","transition","io","overlay","escape","event","event-simulate","event-custom","node-event-html5","node-event-simulate","yui-throttle","moodle-core-notification-dialogue","moodle-core-notification-confirm","moodle-editor_atto-rangy","handlebars","timers","querystring-stringify"]},"moodle-editor_atto-plugin":{"requires":["node","base","escape","event","event-outside","handlebars","event-custom","timers","moodle-editor_atto-menu"]},"moodle-editor_atto-menu":{"requires":["moodle-core-notification-dialogue","node","event","event-custom"]},"moodle-editor_atto-rangy":{"requires":[]},"moodle-format_grid-gridkeys":{"requires":["event-nav-keys"]},"moodle-report_eventlist-eventfilter":{"requires":["base","event","node","node-event-delegate","datatable","autocomplete","autocomplete-filters"]},"moodle-report_loglive-fetchlogs":{"requires":["base","event","node","io","node-event-delegate"]},"moodle-report_overviewstats-charts":{"requires":["base","node","charts","charts-legend"]},"moodle-gradereport_grader-gradereporttable":{"requires":["base","node","event","handlebars","overlay","event-hover"]},"moodle-gradereport_history-userselector":{"requires":["escape","event-delegate","event-key","handlebars","io-base","json-parse","moodle-core-notification-dialogue"]},"moodle-tool_capability-search":{"requires":["base","node"]},"moodle-tool_lp-dragdrop-reorder":{"requires":["moodle-core-dragdrop"]},"moodle-tool_monitor-dropdown":{"requires":["base","event","node"]},"moodle-assignfeedback_editpdf-editor":{"requires":["base","event","node","io","graphics","json","event-move","event-resize","transition","querystring-stringify-simple","moodle-core-notification-dialog","moodle-core-notification-alert","moodle-core-notification-warning","moodle-core-notification-exception","moodle-core-notification-ajaxexception"]},"moodle-atto_accessibilitychecker-button":{"requires":["color-base","moodle-editor_atto-plugin"]},"moodle-atto_accessibilityhelper-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_align-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_bold-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_charmap-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_clear-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_collapse-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_emoticon-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_equation-button":{"requires":["moodle-editor_atto-plugin","moodle-core-event","io","event-valuechange","tabview","array-extras"]},"moodle-atto_html-codemirror":{"requires":["moodle-atto_html-codemirror-skin"]},"moodle-atto_html-button":{"requires":["promise","moodle-editor_atto-plugin","moodle-atto_html-beautify","moodle-atto_html-codemirror","event-valuechange"]},"moodle-atto_html-beautify":{},"moodle-atto_image-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_indent-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_italic-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_link-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_managefiles-usedfiles":{"requires":["node","escape"]},"moodle-atto_managefiles-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_media-button":{"requires":["moodle-editor_atto-plugin","moodle-form-shortforms"]},"moodle-atto_noautolink-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_orderedlist-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_recordrtc-recording":{"requires":["moodle-atto_recordrtc-button"]},"moodle-atto_recordrtc-button":{"requires":["moodle-editor_atto-plugin","moodle-atto_recordrtc-recording"]},"moodle-atto_rtl-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_strike-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_subscript-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_superscript-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_table-button":{"requires":["moodle-editor_atto-plugin","moodle-editor_atto-menu","event","event-valuechange"]},"moodle-atto_title-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_underline-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_undo-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_unorderedlist-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_wiris-button":{"requires":["moodle-editor_atto-plugin","get"]}}},"gallery":{"name":"gallery","base":"https:\/\/moodle.technion.ac.il\/lib\/yuilib\/gallery\/","combine":true,"comboBase":"https:\/\/moodle.technion.ac.il\/theme\/yui_combo.php?","ext":false,"root":"gallery\/1609877076\/","patterns":{"gallery-":{"group":"gallery"}}}},"modules":{"core_filepicker":{"name":"core_filepicker","fullpath":"https:\/\/moodle.technion.ac.il\/lib\/javascript.php\/1609877076\/repository\/filepicker.js","requires":["base","node","node-event-simulate","json","async-queue","io-base","io-upload-iframe","io-form","yui2-treeview","panel","cookie","datatable","datatable-sort","resize-plugin","dd-plugin","escape","moodle-core_filepicker","moodle-core-notification-dialogue"]},"core_comment":{"name":"core_comment","fullpath":"https:\/\/moodle.technion.ac.il\/lib\/javascript.php\/1609877076\/comment\/comment.js","requires":["base","io-base","node","json","yui2-animation","overlay","escape"]},"mathjax":{"name":"mathjax","fullpath":"https:\/\/cdnjs.cloudflare.com\/ajax\/libs\/mathjax\/2.7.2\/MathJax.js?delayStartupUntil=configured"},"block_accessibility":{"name":"block_accessibility","fullpath":"https:\/\/moodle.technion.ac.il\/lib\/javascript.php\/1609877076\/blocks\/accessibility\/module.js","requires":["base","node","stylesheet"]}}};
+M.yui.loader = {modules: {}};
+
+//]]>
+</script>
+
+<script type="text/javascript">
+YUI().use('node', function (Y) {
+Y.on("domready", function(){
+Y.all('.section_add_menus .menujump optgroup').remove();
+});
+});
+</script><meta name="robots" content="noindex" />
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NRMSNN9DYD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+ 
+  gtag('config', 'G-NRMSNN9DYD');
+</script><meta name="robots" content="noindex" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body  id="page-course-view-topics" class="format-topics  path-course path-course-view dir-rtl lang-he yui-skin-sam yui3-skin-sam moodle-technion-ac-il pagelayout-course course-5865 context-1003037 category-17 ">
+
+<div id="page-wrapper">
+
+    <div>
+    <a class="sr-only sr-only-focusable" href="view.php?id=5865#maincontent">דילוג לתוכן הראשי</a>
+</div><script type="text/javascript" src="../theme/yui_combo.php?rollup%252F3.17.2%252Fyui-moodlesimple-min.js"></script><script type="text/javascript" src="../theme/jquery.php/core/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="../lib/javascript.php/1609877076/lib/javascript-static.js"></script>
+<script type="text/javascript">
+//<![CDATA[
+document.body.className += ' jsenabled';
+//]]>
+</script>
+
+
+
+    <nav class="fixed-top navbar navbar-fhs   navbar-expand moodle-has-zindex">
+            <div data-region="drawer-toggle" class="d-inline-block mr-3">
+                <button aria-expanded="false" aria-controls="nav-drawer" type="button" class="btn nav-link float-sm-left mr-1 btn-secondary" data-action="toggle-drawer" data-side="left" data-preference="drawer-open-nav"><i class="icon fa fa-bars fa-fw " aria-hidden="true"  ></i><span class="sr-only">חלון סקירה צדדי</span></button>
+            </div>
+                <a href="https://moodle.technion.ac.il" aria-label="לוגו הטכניון מכון טכנולוגי לישראל moodle - קישור לדף הבית" class="navbar-brand has-logo
+                    ">
+                    <span class="logo d-none d-sm-inline">
+                         <img src="../pluginfile.php/1/core_admin/logocompact/100x100/1609879116/logo&#32;eng&#32;heb&#32;2.png" alt="Moodle" title="Moodle">                
+                    </span>
+                <span class="site-name d-none d-md-inline">Moodle</span>
+            </a>
+            
+            <!-- course_controls -->
+            <div class="coursecontrols nav-item d-flex">
+                
+                
+            </div>
+    
+            <ul class="navbar-nav d-none d-md-flex">
+                <!-- custom_menu -->
+                
+                <li class="nav-item">
+    <a class="nav-item nav-link" href="https://moodle.technion.ac.il/course/index.php" title="קורסים">קורסים</a>
+</li><li class="dropdown nav-item">
+    <a class="dropdown-toggle nav-link" id="drop-down-5ff86eba57dd85ff86eba378b152" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="view.php?id=5865#" aria-controls="drop-down-menu-5ff86eba57dd85ff86eba378b152">
+        למרצים ומתרגלים
+    </a>
+    <div class="dropdown-menu" role="menu" id="drop-down-menu-5ff86eba57dd85ff86eba378b152" aria-labelledby="drop-down-5ff86eba57dd85ff86eba378b152">
+                <a class="dropdown-item" role="menuitem" href="https://moodle.technion.ac.il/mod/forum/view.php?id=88184" title="פורום תמיכה לצוותי הוראה">פורום תמיכה לצוותי הוראה</a>
+                <a class="dropdown-item" role="menuitem" href="http://techwww.technion.ac.il/cgi-bin/courses/moodle.pl" title="טופס פתיחת קורס">טופס פתיחת קורס</a>
+                <a class="dropdown-item" role="menuitem" href="https://moodle.technion.ac.il/course/view.php?id=357&amp;username=guest" title="אתר הדרכה למרצים ומתרגלים">אתר הדרכה למרצים ומתרגלים</a>
+                <a class="dropdown-item" role="menuitem" href="https://moodle.technion.ac.il/mod/url/view.php?id=865807" title="הקלטות ימי עיון מרצים לקראת חורף תשפא">הקלטות ימי עיון מרצים לקראת חורף תשפא</a>
+                <a class="dropdown-item" role="menuitem" href="https://moodle.technion.ac.il/mod/url/view.php?id=865804" title="הקלטות ימי עיון מתרגלים לקראת חורף תשפא">הקלטות ימי עיון מתרגלים לקראת חורף תשפא</a>
+                <a class="dropdown-item" role="menuitem" href="http://library.technion.ac.il/he/Pages/Help/Fair_Use_Research.aspx" title="זכויות יוצרים ושימוש הוגן">זכויות יוצרים ושימוש הוגן</a>
+                <a class="dropdown-item" role="menuitem" href="http://www.admin.technion.ac.il/dpcalendar/" title="לוח שנה אקדמית">לוח שנה אקדמית</a>
+                <a class="dropdown-item" role="menuitem" href="https://moodle.technion.ac.il/mod/page/view.php?id=3611" title="צרו קשר">צרו קשר</a>
+    </div>
+</li><li class="dropdown nav-item">
+    <a class="dropdown-toggle nav-link" id="drop-down-5ff86eba57ebe5ff86eba378b153" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="view.php?id=5865#" aria-controls="drop-down-menu-5ff86eba57ebe5ff86eba378b153">
+        לסטודנטים
+    </a>
+    <div class="dropdown-menu" role="menu" id="drop-down-menu-5ff86eba57ebe5ff86eba378b153" aria-labelledby="drop-down-5ff86eba57ebe5ff86eba378b153">
+                <a class="dropdown-item" role="menuitem" href="https://moodle.technion.ac.il/mod/page/view.php?id=444226" title="הנחיות לאיפוס סיסמה">הנחיות לאיפוס סיסמה</a>
+                <a class="dropdown-item" role="menuitem" href="https://moodle.technion.ac.il/mod/page/view.php?id=622300" title="שאלות נפוצות">שאלות נפוצות</a>
+                <a class="dropdown-item" role="menuitem" href="http://techwww.technion.ac.il/cgi-bin/courses/courses.pl?Language=HEBREW" title="רישום לאתרי קורסים דרך רשימת תפוצה">רישום לאתרי קורסים דרך רשימת תפוצה</a>
+                <a class="dropdown-item" role="menuitem" href="http://www.admin.technion.ac.il/dpcalendar/Student.html" title="לוח שנה אקדמית">לוח שנה אקדמית</a>
+                <a class="dropdown-item" role="menuitem" href="https://multimedia.net.technion.ac.il/" title="אתר הקורסים המצולמים">אתר הקורסים המצולמים</a>
+                <a class="dropdown-item" role="menuitem" href="https://moodle.technion.ac.il/mod/page/view.php?id=3611" title="צרו קשר">צרו קשר</a>
+                <a class="dropdown-item" role="menuitem" href="https://moodle.technion.ac.il/mod/page/view.php?id=819491" title="הנחיות לסריקת מסמכים והגשתם">הנחיות לסריקת מסמכים והגשתם</a>
+    </div>
+</li><li class="dropdown nav-item">
+    <a class="dropdown-toggle nav-link" id="drop-down-5ff86eba57f755ff86eba378b154" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="view.php?id=5865#" aria-controls="drop-down-menu-5ff86eba57f755ff86eba378b154">
+        עברית ‎(he)‎
+    </a>
+    <div class="dropdown-menu" role="menu" id="drop-down-menu-5ff86eba57f755ff86eba378b154" aria-labelledby="drop-down-5ff86eba57f755ff86eba378b154">
+                <a class="dropdown-item" role="menuitem" href="https://moodle.technion.ac.il/course/view.php?id=5865&amp;lang=he" title="עברית ‎(he)‎">עברית ‎(he)‎</a>
+                <a class="dropdown-item" role="menuitem" href="https://moodle.technion.ac.il/course/view.php?id=5865&amp;lang=en" title="English ‎(en)‎">English ‎(en)‎</a>
+    </div>
+</li>
+                <!-- page_heading_menu -->
+                
+            </ul>
+            <ul class="nav navbar-nav ml-auto">
+                <div class="d-none d-lg-block">
+                
+            </div>
+                <!-- navbar_plugin_output -->
+                <li class="nav-item">
+                
+                </li>
+                <!-- user_menu -->
+                <li class="nav-item d-flex align-items-center">
+                    <div class="usermenu"><span class="login">אתם משתמשים כרגע בגישת אורחים (<a href="https://moodle.technion.ac.il/login/index.php">התחברות</a>)</span></div>
+                </li>
+            </ul>
+            <!-- search_box -->
+    </nav>
+    
+
+        <div class="headerbkg"><div class="customimage" style="background-image: url(https://moodle.technion.ac.il/course/&quot;//moodle.technion.ac.il/pluginfile.php/1/theme_fordson/headerdefaultimage/1609879116/headerbg.jpg&quot;); background-size: cover; background-position:center;
+                width: 100%; height: 100%;"></div></div>
+
+    <div id="page" class="container-fluid">
+        
+        <div id="learningcontent">
+        
+            
+            <header id="page-header" class="row">
+    <div class="col-12 pt-3 pb-3">
+        <div class="card ">
+            <div class="card-body ">
+                <div class="d-flex">
+                    <div class="mr-auto">
+                        <a href="view.php?id=5865"><div class="page-context-header"><div class="page-header-headings"><h1>236347 - סינתזה של תוכנה והיסק אוטומטי - אביב</h1></div></div></a>
+                    </div>
+
+                </div>
+                <div class="d-flex flex-wrap">
+                    <div id="page-navbar">
+                        <nav role="navigation">
+    <ul class="breadcrumb">
+                <li class="breadcrumb-item"><a href="https://moodle.technion.ac.il/" >ראשי</a></li>
+                <li class="breadcrumb-item"><a href="https://moodle.technion.ac.il/course/index.php" >קורסים</a></li>
+                <li class="breadcrumb-item"><a href="https://moodle.technion.ac.il/course/index.php?categoryid=17" >מדעי המחשב</a></li>
+                <li class="breadcrumb-item"><a href="view.php?id=5865" title="236347 - סינתזה של תוכנה והיסק אוטומטי - אביב">236347s</a></li>
+    </ul>
+</nav>
+                    </div>
+                    <div class="ml-auto d-flex">
+                        
+                    </div>
+                    <div id="course-header">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+            
+            <div id="page-content" class="row pb-3">
+                <div id="region-main-box" class="col-12">
+                    <section id="region-main" class="has-blocks mb-3">
+
+                                
+                                <span class="notifications" id="user-notifications"></span>
+                                <div role="main"><span id="maincontent"></span><div class="course-content"><h2 class="accesshide">יחידות הוראה</h2><ul class="topics"><li id="section-0" class="section main clearfix" role="region" aria-label="ימי ד׳, 14:30–16:30"><span class="hidden sectionname">ימי ד׳, 14:30–16:30</span><div class="left side"></div><div class="right side"><img class="icon spacer" width="1" height="1" alt="" aria-hidden="true" src="../theme/image.php/fordson/core/1609879116/spacer" /></div><div class="content"><h3 class="sectionname"><span><a href="view.php?id=5865#section-0">ימי ד׳, 14:30–16:30</a></span></h3><div class="section_availability"></div><div class="summary"><div class="no-overflow"><p><a href="https://technion.zoom.us/j/8136977234">https://technion.zoom.us/j/8136977234</a></p></div></div><ul class="section img-text"><li class="activity forum modtype_forum " id="module-590633"><div><div class="mod-indent-outer"><div class="mod-indent"></div><div><div class="activityinstance"><a class="" onclick="" href="https://moodle.technion.ac.il/mod/forum/view.php?id=590633"><img src="../theme/image.php/fordson/forum/1609879116/icon.svg" class="iconlarge activityicon" alt="" role="presentation" aria-hidden="true" /><span class="instancename">לוח הודעות<span class="accesshide " > פורום</span></span></a></div></div></div></div></li><li class="activity page modtype_page " id="module-593048"><div><div class="mod-indent-outer"><div class="mod-indent"></div><div><div class="activityinstance"><a class="" onclick="" href="https://moodle.technion.ac.il/mod/page/view.php?id=593048"><img src="../theme/image.php/fordson/page/1609879116/icon.svg" class="iconlarge activityicon" alt="" role="presentation" aria-hidden="true" /><span class="instancename">מפת דרכים<span class="accesshide " > דף תוכן מעוצב</span></span></a></div><div class="contentafterlink"><div class="no-overflow"><div class="no-overflow"><p dir="ltr" style="text-align: left; width: 500px;"><a href="view.php?id=5865#section-5"><img src="../pluginfile.php/1006582/mod_page/intro/מפת&#32;דרכים&#32;-&#32;שקף.png" width="360" height="270" /></a></p></div></div></div></div></div></div></li><li class="activity page modtype_page " id="module-670173"><div><div class="mod-indent-outer"><div class="mod-indent"></div><div><div class="activityinstance"><a class="" onclick="" href="https://moodle.technion.ac.il/mod/page/view.php?id=670173"><img src="../theme/image.php/fordson/page/1609879116/icon.svg" class="iconlarge activityicon" alt="" role="presentation" aria-hidden="true" /><span class="instancename">רשימת קריאה<span class="accesshide " > דף תוכן מעוצב</span></span></a></div></div></div></div></li><li class="activity url modtype_url " id="module-595422"><div><div class="mod-indent-outer"><div class="mod-indent"></div><div><div class="activityinstance"><a class="" onclick="" href="https://moodle.technion.ac.il/mod/url/view.php?id=595422"><img src="../theme/image.php/fordson/url/1609879116/icon.svg" class="iconlarge activityicon" alt="" role="presentation" aria-hidden="true" /><span class="instancename">קוד מקור לתרגילים<span class="accesshide " > קישור לאתר אינטרנט</span></span></a></div></div></div></div></li><li class="activity url modtype_url " id="module-593121"><div><div class="mod-indent-outer"><div class="mod-indent"></div><div><div class="activityinstance"><a class="" onclick="" href="https://moodle.technion.ac.il/mod/url/view.php?id=593121"><img src="../theme/image.php/fordson/url/1609879116/icon.svg" class="iconlarge activityicon" alt="" role="presentation" aria-hidden="true" /><span class="instancename">מכונה וירטואלית לתרגילים<span class="accesshide " > קישור לאתר אינטרנט</span></span></a></div></div></div></div></li><li class="activity choicegroup modtype_choicegroup " id="module-675612"><div><div class="mod-indent-outer"><div class="mod-indent"></div><div><div class="activityinstance"><a class="" onclick="" href="https://moodle.technion.ac.il/mod/choicegroup/view.php?id=675612"><img src="../theme/image.php/fordson/choicegroup/1609879116/icon.svg" class="iconlarge activityicon" alt="" role="presentation" aria-hidden="true" /><span class="instancename">שיוך זוגות להגשת תרגילי בית<span class="accesshide " > תלמידים בוחרים קבוצה</span></span></a></div></div></div></div></li></ul></div></li><li id="section-1" class="section main clearfix" role="region" aria-label="הרצאת מבוא ומבט־על של התחום"><span class="hidden sectionname">הרצאת מבוא ומבט־על של התחום</span><div class="left side"></div><div class="right side"><img class="icon spacer" width="1" height="1" alt="" aria-hidden="true" src="../theme/image.php/fordson/core/1609879116/spacer" /></div><div class="content"><h3 class="sectionname"><span><a href="view.php?id=5865#section-1">הרצאת מבוא ומבט־על של התחום</a></span></h3><div class="section_availability"></div><div class="summary"><div class="no-overflow"><ul>
+<li>מפת<span>־דרכים לקורס</span></li>
+<li><span>מהו פורמליזם</span></li>
+<li><span>מבוא לסמנטיקה</span></li>
+<li><span>סינתזה: דוגמאות של כלים קיימים</span></li>
+<li><span>שלושת הצירים בסינתזה של תוכנה</span></li>
+</ul></div></div><ul class="section img-text"><li class="activity resource modtype_resource " id="module-595906"><div><div class="mod-indent-outer"><div class="mod-indent"></div><div><div class="activityinstance"><a class="" onclick="window.open(&#039;https://moodle.technion.ac.il/mod/resource/view.php?id=595906&amp;redirect=1&#039;); return false;" href="https://moodle.technion.ac.il/mod/resource/view.php?id=595906"><img src="../theme/image.php/fordson/core/1609879116/f/pdf.svg" class="iconlarge activityicon" alt="" role="presentation" aria-hidden="true" /><span class="instancename">מצגת<span class="accesshide " > קובץ</span></span></a> <span class="resourcelinkdetails">22.7MB מסמך PDF</span></div></div></div></div></li><li class="activity url modtype_url " id="module-749033"><div><div class="mod-indent-outer"><div class="mod-indent mod-indent-1"></div><div><div class="activityinstance"><a class="" onclick="" href="https://moodle.technion.ac.il/mod/url/view.php?id=749033"><img src="../theme/image.php/fordson/url/1609879116/icon.svg" class="iconlarge activityicon" alt="" role="presentation" aria-hidden="true" /><span class="instancename">וידאו<span class="accesshide " > קישור לאתר אינטרנט</span></span></a></div></div></div></div></li></ul></div></li><li id="section-2" class="section main clearfix" role="region" aria-label="תחשיב λ"><span class="hidden sectionname">תחשיב λ</span><div class="left side"></div><div class="right side"><img class="icon spacer" width="1" height="1" alt="" aria-hidden="true" src="../theme/image.php/fordson/core/1609879116/spacer" /></div><div class="content"><h3 class="sectionname"><span><a href="view.php?id=5865#section-2">תחשיב λ</a></span></h3><div class="section_availability"></div><div class="summary"><div class="no-overflow"><ul>
+<li>הגדרה תחבירית</li>
+<li>כללי גזירה במערכת</li>
+<li>צורה נורמלית</li>
+<li>תכונות סדר הגזירה</li>
+<li>קידוד Church למספרים ולבולאנים</li>
+<li>עצירה</li>
+<li>רקורסיה</li>
+</ul></div></div><ul class="section img-text"><li class="activity resource modtype_resource " id="module-596992"><div><div class="mod-indent-outer"><div class="mod-indent mod-indent-1"></div><div><div class="activityinstance"><a class="" onclick="window.open(&#039;https://moodle.technion.ac.il/mod/resource/view.php?id=596992&amp;redirect=1&#039;); return false;" href="https://moodle.technion.ac.il/mod/resource/view.php?id=596992"><img src="../theme/image.php/fordson/core/1609879116/f/pdf.svg" class="iconlarge activityicon" alt="" role="presentation" aria-hidden="true" /><span class="instancename">מצגת<span class="accesshide " > קובץ</span></span></a> <span class="resourcelinkdetails">7.7MB מסמך PDF</span></div></div></div></div></li><li class="activity resource modtype_resource " id="module-672496"><div><div class="mod-indent-outer"><div class="mod-indent mod-indent-2"></div><div><div class="activityinstance"><a class="" onclick="window.open(&#039;https://moodle.technion.ac.il/mod/resource/view.php?id=672496&amp;redirect=1&#039;); return false;" href="https://moodle.technion.ac.il/mod/resource/view.php?id=672496"><img src="../theme/image.php/fordson/core/1609879116/f/pdf.svg" class="iconlarge activityicon" alt="" role="presentation" aria-hidden="true" /><span class="instancename">מצגת (תמסירים)<span class="accesshide " > קובץ</span></span></a> <span class="resourcelinkdetails">6.8MB מסמך PDF</span></div></div></div></div></li><li class="activity url modtype_url " id="module-757722"><div><div class="mod-indent-outer"><div class="mod-indent mod-indent-2"></div><div><div class="activityinstance"><a class="" onclick="" href="https://moodle.technion.ac.il/mod/url/view.php?id=757722"><img src="../theme/image.php/fordson/url/1609879116/icon.svg" class="iconlarge activityicon" alt="" role="presentation" aria-hidden="true" /><span class="instancename">וידאו<span class="accesshide " > קישור לאתר אינטרנט</span></span></a></div></div></div></div></li><li class="activity assign modtype_assign " id="module-595899"><div><div class="mod-indent-outer"><div class="mod-indent mod-indent-1"></div><div><div class="activityinstance"><a class="" onclick="" href="https://moodle.technion.ac.il/mod/assign/view.php?id=595899"><img src="../theme/image.php/fordson/assign/1609879116/icon.svg" class="iconlarge activityicon" alt="" role="presentation" aria-hidden="true" /><span class="instancename">מעבדה 1<span class="accesshide " > מטלה</span></span></a></div></div></div></div></li><li class="activity book modtype_book " id="module-672610"><div><div class="mod-indent-outer"><div class="mod-indent mod-indent-1"></div><div><div class="activityinstance"><a class="" onclick="" href="https://moodle.technion.ac.il/mod/book/view.php?id=672610"><img src="../theme/image.php/fordson/book/1609879116/icon.svg" class="iconlarge activityicon" alt="" role="presentation" aria-hidden="true" /><span class="instancename">λ-Calculus Cheatsheet<span class="accesshide " > ספר</span></span></a></div></div></div></div></li><li class="activity page modtype_page " id="module-597719"><div><div class="mod-indent-outer"><div class="mod-indent"></div><div><div class="activityinstance"><a class="" onclick="" href="https://moodle.technion.ac.il/mod/page/view.php?id=597719"><img src="../theme/image.php/fordson/page/1609879116/icon.svg" class="iconlarge activityicon" alt="" role="presentation" aria-hidden="true" /><span class="instancename">תת־נושא: Simply Typed λ-Calculus<span class="accesshide " > דף תוכן מעוצב</span></span></a></div><div class="contentafterlink"><div class="no-overflow"><div class="no-overflow"><ul style="min-width: 400px;"><!-- some bug with the theme css -->
+<li>למה צריך טיפוסים?</li>
+<li>הרחבות תחביר וכללי טיפוסים</li>
+<li>הסקת טיפוסים בשיטת Hindley-Milner, יוניפיקציה</li>
+<li>פולימורפיזם</li>
+<li>הצגת בעיות ומגבלות</li>
+</ul></div></div></div></div></div></div></li><li class="activity assign modtype_assign " id="module-598870"><div><div class="mod-indent-outer"><div class="mod-indent mod-indent-1"></div><div><div class="activityinstance"><a class="" onclick="" href="https://moodle.technion.ac.il/mod/assign/view.php?id=598870"><img src="../theme/image.php/fordson/assign/1609879116/icon.svg" class="iconlarge activityicon" alt="" role="presentation" aria-hidden="true" /><span class="instancename">עבודת הכנה להפעלת Coq  –   *** יש להשלים טרם ההרצאה ***<span class="accesshide " > מטלה</span></span></a></div></div></div></div></li><li class="activity resource modtype_resource " id="module-599031"><div><div class="mod-indent-outer"><div class="mod-indent mod-indent-1"></div><div><div class="activityinstance"><a class="" onclick="window.open(&#039;https://moodle.technion.ac.il/mod/resource/view.php?id=599031&amp;redirect=1&#039;); return false;" href="https://moodle.technion.ac.il/mod/resource/view.php?id=599031"><img src="../theme/image.php/fordson/core/1609879116/f/pdf.svg" class="iconlarge activityicon" alt="" role="presentation" aria-hidden="true" /><span class="instancename">מצגת<span class="accesshide " > קובץ</span></span></a> <span class="resourcelinkdetails">4MB מסמך PDF</span></div></div></div></div></li><li class="activity resource modtype_resource " id="module-674294"><div><div class="mod-indent-outer"><div class="mod-indent mod-indent-2"></div><div><div class="activityinstance"><a class="" onclick="window.open(&#039;https://moodle.technion.ac.il/mod/resource/view.php?id=674294&amp;redirect=1&#039;); return false;" href="https://moodle.technion.ac.il/mod/resource/view.php?id=674294"><img src="../theme/image.php/fordson/core/1609879116/f/pdf.svg" class="iconlarge activityicon" alt="" role="presentation" aria-hidden="true" /><span class="instancename">מצגת (תמסירים)<span class="accesshide " > קובץ</span></span></a> <span class="resourcelinkdetails">3.8MB מסמך PDF</span></div></div></div></div></li><li class="activity url modtype_url " id="module-764341"><div><div class="mod-indent-outer"><div class="mod-indent mod-indent-2"></div><div><div class="activityinstance"><a class="" onclick="" href="https://moodle.technion.ac.il/mod/url/view.php?id=764341"><img src="../theme/image.php/fordson/url/1609879116/icon.svg" class="iconlarge activityicon" alt="" role="presentation" aria-hidden="true" /><span class="instancename">וידאו<span class="accesshide " > קישור לאתר אינטרנט</span></span></a></div></div></div></div></li><li class="activity assign modtype_assign " id="module-758459"><div><div class="mod-indent-outer"><div class="mod-indent mod-indent-1"></div><div><div class="activityinstance"><a class="" onclick="" href="https://moodle.technion.ac.il/mod/assign/view.php?id=758459"><img src="../theme/image.php/fordson/assign/1609879116/icon.svg" class="iconlarge activityicon" alt="" role="presentation" aria-hidden="true" /><span class="instancename">מעבדה 2<span class="accesshide " > מטלה</span></span></a></div></div></div></div></li><li class="activity assign modtype_assign " id="module-598044"><div><div class="mod-indent-outer"><div class="mod-indent mod-indent-1"></div><div><div class="activityinstance"><a class="" onclick="" href="https://moodle.technion.ac.il/mod/assign/view.php?id=598044"><img src="../theme/image.php/fordson/assign/1609879116/icon.svg" class="iconlarge activityicon" alt="" role="presentation" aria-hidden="true" /><span class="instancename">תרגיל בית 1<span class="accesshide " > מטלה</span></span></a></div></div></div></div></li><li class="activity book modtype_book " id="module-602776"><div><div class="mod-indent-outer"><div class="mod-indent"></div><div><div class="activityinstance"><a class="" onclick="" href="https://moodle.technion.ac.il/mod/book/view.php?id=602776"><img src="../theme/image.php/fordson/book/1609879116/icon.svg" class="iconlarge activityicon" alt="" role="presentation" aria-hidden="true" /><span class="instancename">Coq Cheatsheet<span class="accesshide " > ספר</span></span></a></div></div></div></div></li></ul></div></li><li id="section-3" class="section main clearfix" role="region" aria-label="Dependent Types"><span class="hidden sectionname">Dependent Types</span><div class="left side"></div><div class="right side"><img class="icon spacer" width="1" height="1" alt="" aria-hidden="true" src="../theme/image.php/fordson/core/1609879116/spacer" /></div><div class="content"><h3 class="sectionname"><span><a href="view.php?id=5865#section-3">Dependent Types</a></span></h3><div class="section_availability"></div><div class="summary"><div class="no-overflow"><ul>
+<li>הכללה של פולימורפיזם</li>
+<li>טיפוסים אלגבריים ואינדוקטיביים</li>
+<li>פרמטרים בלתי-מפורשים</li>
+<li><span>טיפוסים שהם ביטויים / </span>ביטויים שהם טיפוסים</li>
+<li>בדיקת טיפוסים <span dir="rtl">dependent;</span> dependent match.</li>
+<li>עקרון הרקורסיה</li>
+</ul></div></div><ul class="section img-text"><li class="activity resource modtype_resource " id="module-601726"><div><div class="mod-indent-outer"><div class="mod-indent"></div><div><div class="activityinstance"><a class="" onclick="window.open(&#039;https://moodle.technion.ac.il/mod/resource/view.php?id=601726&amp;redirect=1&#039;); return false;" href="https://moodle.technion.ac.il/mod/resource/view.php?id=601726"><img src="../theme/image.php/fordson/core/1609879116/f/pdf.svg" class="iconlarge activityicon" alt="" role="presentation" aria-hidden="true" /><span class="instancename">מצגת<span class="accesshide " > קובץ</span></span></a> <span class="resourcelinkdetails">5.1MB מסמך PDF</span></div></div></div></div></li><li class="activity resource modtype_resource " id="module-674403"><div><div class="mod-indent-outer"><div class="mod-indent mod-indent-1"></div><div><div class="activityinstance"><a class="" onclick="window.open(&#039;https://moodle.technion.ac.il/mod/resource/view.php?id=674403&amp;redirect=1&#039;); return false;" href="https://moodle.technion.ac.il/mod/resource/view.php?id=674403"><img src="../theme/image.php/fordson/core/1609879116/f/pdf.svg" class="iconlarge activityicon" alt="" role="presentation" aria-hidden="true" /><span class="instancename">מצגת (תמסירים)<span class="accesshide " > קובץ</span></span></a> <span class="resourcelinkdetails">6.4MB מסמך PDF</span></div></div></div></div></li><li class="activity url modtype_url " id="module-777317"><div><div class="mod-indent-outer"><div class="mod-indent mod-indent-1"></div><div><div class="activityinstance"><a class="" onclick="" href="https://moodle.technion.ac.il/mod/url/view.php?id=777317"><img src="../theme/image.php/fordson/url/1609879116/icon.svg" class="iconlarge activityicon" alt="" role="presentation" aria-hidden="true" /><span class="instancename">וידאו<span class="accesshide " > קישור לאתר אינטרנט</span></span></a></div></div></div></div></li><li class="activity assign modtype_assign " id="module-599452"><div><div class="mod-indent-outer"><div class="mod-indent"></div><div><div class="activityinstance"><a class="" onclick="" href="https://moodle.technion.ac.il/mod/assign/view.php?id=599452"><img src="../theme/image.php/fordson/assign/1609879116/icon.svg" class="iconlarge activityicon" alt="" role="presentation" aria-hidden="true" /><span class="instancename">מעבדה 3<span class="accesshide " > מטלה</span></span></a></div></div></div></div></li></ul></div></li><li id="section-4" class="section main clearfix" role="region" aria-label="Type Theory"><span class="hidden sectionname">Type Theory</span><div class="left side"></div><div class="right side"><img class="icon spacer" width="1" height="1" alt="" aria-hidden="true" src="../theme/image.php/fordson/core/1609879116/spacer" /></div><div class="content"><h3 class="sectionname"><span><a href="view.php?id=5865#section-4">Type Theory</a></span></h3><div class="section_availability"></div><div class="summary"><div class="no-overflow"><ul>
+<li>קבוצות = טיפוסים = טענות</li>
+<li>Curry-Howard Correspondence</li>
+<li>עצירה</li>
+<li>מימוש – Calculus of Constructions
+<ul>
+<li>Coq</li>
+<li>שימוש בתצורה טקטית לפיתוח הוכחות</li>
+</ul>
+</li>
+</ul></div></div><ul class="section img-text"><li class="activity resource modtype_resource " id="module-603511"><div><div class="mod-indent-outer"><div class="mod-indent"></div><div><div class="activityinstance"><a class="" onclick="window.open(&#039;https://moodle.technion.ac.il/mod/resource/view.php?id=603511&amp;redirect=1&#039;); return false;" href="https://moodle.technion.ac.il/mod/resource/view.php?id=603511"><img src="../theme/image.php/fordson/core/1609879116/f/pdf.svg" class="iconlarge activityicon" alt="" role="presentation" aria-hidden="true" /><span class="instancename">מצגת<span class="accesshide " > קובץ</span></span></a> <span class="resourcelinkdetails">9.6MB מסמך PDF</span></div></div></div></div></li><li class="activity resource modtype_resource " id="module-675784"><div><div class="mod-indent-outer"><div class="mod-indent mod-indent-1"></div><div><div class="activityinstance"><a class="" onclick="window.open(&#039;https://moodle.technion.ac.il/mod/resource/view.php?id=675784&amp;redirect=1&#039;); return false;" href="https://moodle.technion.ac.il/mod/resource/view.php?id=675784"><img src="../theme/image.php/fordson/core/1609879116/f/pdf.svg" class="iconlarge activityicon" alt="" role="presentation" aria-hidden="true" /><span class="instancename">מצגת (תמסירים)<span class="accesshide " > קובץ</span></span></a> <span class="resourcelinkdetails">9.5MB מסמך PDF</span></div></div></div></div></li><li class="activity url modtype_url " id="module-783699"><div><div class="mod-indent-outer"><div class="mod-indent mod-indent-1"></div><div><div class="activityinstance"><a class="" onclick="" href="https://moodle.technion.ac.il/mod/url/view.php?id=783699"><img src="../theme/image.php/fordson/url/1609879116/icon.svg" class="iconlarge activityicon" alt="" role="presentation" aria-hidden="true" /><span class="instancename">וידאו<span class="accesshide " > קישור לאתר אינטרנט</span></span></a></div></div></div></div></li><li class="activity url modtype_url " id="module-793102"><div><div class="mod-indent-outer"><div class="mod-indent mod-indent-1"></div><div><div class="activityinstance"><a class="" onclick="" href="https://moodle.technion.ac.il/mod/url/view.php?id=793102"><img src="../theme/image.php/fordson/url/1609879116/icon.svg" class="iconlarge activityicon" alt="" role="presentation" aria-hidden="true" /><span class="instancename">וידאו (כתיבת הוכחות ב Coq)<span class="accesshide " > קישור לאתר אינטרנט</span></span></a></div></div></div></div></li><li class="activity assign modtype_assign " id="module-603500"><div><div class="mod-indent-outer"><div class="mod-indent"></div><div><div class="activityinstance"><a class="" onclick="" href="https://moodle.technion.ac.il/mod/assign/view.php?id=603500"><img src="../theme/image.php/fordson/assign/1609879116/icon.svg" class="iconlarge activityicon" alt="" role="presentation" aria-hidden="true" /><span class="instancename">מעבדה 4<span class="accesshide " > מטלה</span></span></a></div></div></div></div></li><li class="activity assign modtype_assign " id="module-677561"><div><div class="mod-indent-outer"><div class="mod-indent"></div><div><div class="activityinstance"><a class="" onclick="" href="https://moodle.technion.ac.il/mod/assign/view.php?id=677561"><img src="../theme/image.php/fordson/assign/1609879116/icon.svg" class="iconlarge activityicon" alt="" role="presentation" aria-hidden="true" /><span class="instancename">תרגיל בית 2<span class="accesshide " > מטלה</span></span></a></div></div></div></div></li></ul></div></li><li id="section-5" class="section main clearfix" role="region" aria-label="סמנטיקה פורמלית ואקסיומטית"><span class="hidden sectionname">סמנטיקה פורמלית ואקסיומטית</span><div class="left side"></div><div class="right side"><img class="icon spacer" width="1" height="1" alt="" aria-hidden="true" src="../theme/image.php/fordson/core/1609879116/spacer" /></div><div class="content"><h3 class="sectionname"><span><a href="view.php?id=5865#section-5">סמנטיקה פורמלית ואקסיומטית</a></span></h3><div class="section_availability"></div><div class="summary"></div><ul class="section img-text"><li class="activity label modtype_label " id="module-604849"><div><div class="mod-indent-outer"><div class="mod-indent"></div><div><div class="contentwithoutlink "><div class="no-overflow"><div class="no-overflow"><p><img src="../theme/image.php/fordson/page/1589807549/icon.svg" width="23" height="23" />  <span style="color: #008080;">תת־נושא: Transition Systems</span></p>
+<ul style="padding-right: 20px;">
+<li>הגדרה של תכניות איטרטיביות ב Type Theory</li>
+<li>יחס המעבר (transition relation)</li>
+<li>סגור טרנזיטיבי</li>
+<li>הוכחות נכונות באמצעות שמורות</li>
+</ul></div></div></div></div></div></div></li><li class="activity resource modtype_resource " id="module-604903"><div><div class="mod-indent-outer"><div class="mod-indent mod-indent-1"></div><div><div class="activityinstance"><a class="" onclick="window.open(&#039;https://moodle.technion.ac.il/mod/resource/view.php?id=604903&amp;redirect=1&#039;); return false;" href="https://moodle.technion.ac.il/mod/resource/view.php?id=604903"><img src="../theme/image.php/fordson/core/1609879116/f/pdf.svg" class="iconlarge activityicon" alt="" role="presentation" aria-hidden="true" /><span class="instancename">מצגת<span class="accesshide " > קובץ</span></span></a> <span class="resourcelinkdetails">4.6MB מסמך PDF</span></div></div></div></div></li><li class="activity resource modtype_resource " id="module-679314"><div><div class="mod-indent-outer"><div class="mod-indent mod-indent-2"></div><div><div class="activityinstance"><a class="" onclick="window.open(&#039;https://moodle.technion.ac.il/mod/resource/view.php?id=679314&amp;redirect=1&#039;); return false;" href="https://moodle.technion.ac.il/mod/resource/view.php?id=679314"><img src="../theme/image.php/fordson/core/1609879116/f/pdf.svg" class="iconlarge activityicon" alt="" role="presentation" aria-hidden="true" /><span class="instancename">מצגת (תמסירים)<span class="accesshide " > קובץ</span></span></a> <span class="resourcelinkdetails">4.6MB מסמך PDF</span></div></div></div></div></li><li class="activity url modtype_url " id="module-793150"><div><div class="mod-indent-outer"><div class="mod-indent mod-indent-2"></div><div><div class="activityinstance"><a class="" onclick="" href="https://moodle.technion.ac.il/mod/url/view.php?id=793150"><img src="../theme/image.php/fordson/url/1609879116/icon.svg" class="iconlarge activityicon" alt="" role="presentation" aria-hidden="true" /><span class="instancename">וידאו<span class="accesshide " > קישור לאתר אינטרנט</span></span></a></div></div></div></div></li><li class="activity assign modtype_assign " id="module-604852"><div><div class="mod-indent-outer"><div class="mod-indent mod-indent-1"></div><div><div class="activityinstance"><a class="" onclick="" href="https://moodle.technion.ac.il/mod/assign/view.php?id=604852"><img src="../theme/image.php/fordson/assign/1609879116/icon.svg" class="iconlarge activityicon" alt="" role="presentation" aria-hidden="true" /><span class="instancename">מעבדה 5<span class="accesshide " > מטלה</span></span></a></div></div></div></div></li><li class="activity label modtype_label " id="module-606269"><div><div class="mod-indent-outer"><div class="mod-indent"></div><div><div class="contentwithoutlink "><div class="no-overflow"><div class="no-overflow"><p><img src="../theme/image.php/fordson/page/1589807549/icon.svg" width="23" height="23" /> <span style="color: #008080;">תת־נושא: Hoare Logic</span></p>
+<ul style="padding-right: 20px;">
+<li>הוכחת תכניות באמצעות assertions</li>
+<li>שלשות Hoare, כללי Hoare</li>
+<li>בניית הוכחה מלמטה-למעלה</li>
+</ul></div></div></div></div></div></div></li><li class="activity resource modtype_resource " id="module-606282"><div><div class="mod-indent-outer"><div class="mod-indent mod-indent-1"></div><div><div class="activityinstance"><a class="" onclick="window.open(&#039;https://moodle.technion.ac.il/mod/resource/view.php?id=606282&amp;redirect=1&#039;); return false;" href="https://moodle.technion.ac.il/mod/resource/view.php?id=606282"><img src="../theme/image.php/fordson/core/1609879116/f/pdf.svg" class="iconlarge activityicon" alt="" role="presentation" aria-hidden="true" /><span class="instancename">מצגת<span class="accesshide " > קובץ</span></span></a> <span class="resourcelinkdetails">5.7MB מסמך PDF</span></div></div></div></div></li><li class="activity resource modtype_resource " id="module-681656"><div><div class="mod-indent-outer"><div class="mod-indent mod-indent-2"></div><div><div class="activityinstance"><a class="" onclick="window.open(&#039;https://moodle.technion.ac.il/mod/resource/view.php?id=681656&amp;redirect=1&#039;); return false;" href="https://moodle.technion.ac.il/mod/resource/view.php?id=681656"><img src="../theme/image.php/fordson/core/1609879116/f/pdf.svg" class="iconlarge activityicon" alt="" role="presentation" aria-hidden="true" /><span class="instancename">מצגת (תמסירים)<span class="accesshide " > קובץ</span></span></a> <span class="resourcelinkdetails">5MB מסמך PDF</span></div></div></div></div></li><li class="activity url modtype_url " id="module-800175"><div><div class="mod-indent-outer"><div class="mod-indent mod-indent-2"></div><div><div class="activityinstance"><a class="" onclick="" href="https://moodle.technion.ac.il/mod/url/view.php?id=800175"><img src="../theme/image.php/fordson/url/1609879116/icon.svg" class="iconlarge activityicon" alt="" role="presentation" aria-hidden="true" /><span class="instancename">וידאו<span class="accesshide " > קישור לאתר אינטרנט</span></span></a></div></div></div></div></li><li class="activity assign modtype_assign " id="module-606276"><div><div class="mod-indent-outer"><div class="mod-indent mod-indent-1"></div><div><div class="activityinstance"><a class="" onclick="" href="https://moodle.technion.ac.il/mod/assign/view.php?id=606276"><img src="../theme/image.php/fordson/assign/1609879116/icon.svg" class="iconlarge activityicon" alt="" role="presentation" aria-hidden="true" /><span class="instancename">מעבדה 6<span class="accesshide " > מטלה</span></span></a></div></div></div></div></li><li class="activity resource modtype_resource " id="module-797718"><div><div class="mod-indent-outer"><div class="mod-indent mod-indent-1"></div><div><div class="activityinstance"><a class="" onclick="window.open(&#039;https://moodle.technion.ac.il/mod/resource/view.php?id=797718&amp;redirect=1&#039;); return false;" href="https://moodle.technion.ac.il/mod/resource/view.php?id=797718"><img src="../theme/image.php/fordson/core/1609879116/f/pdf.svg" class="iconlarge activityicon" alt="" role="presentation" aria-hidden="true" /><span class="instancename">Cheatsheet - Hoare Logic<span class="accesshide " > קובץ</span></span></a></div></div></div></div></li></ul></div></li><li id="section-6" class="section main clearfix" role="region" aria-label="Satisfiability Modulo Theory"><span class="hidden sectionname">Satisfiability Modulo Theory</span><div class="left side"></div><div class="right side"><img class="icon spacer" width="1" height="1" alt="" aria-hidden="true" src="../theme/image.php/fordson/core/1609879116/spacer" /></div><div class="content"><h3 class="sectionname"><span><a href="view.php?id=5865#section-6">Satisfiability Modulo Theory</a></span></h3><div class="section_availability"></div><div class="summary"><div class="no-overflow"><ul>
+<li>ספיקות בוליאנית (SAT)</li>
+<li>תיאוריות: uninterpreted functions, אלגברה ליניארית בשלמים</li>
+<li>שילוב של SAT עם תיאוריות בשיטת <span dir="ltr">DPLL(T)</span></li>
+<li>כמתים (בקצרה)</li>
+<li>הוכחת תכונות של תכניות באמצעות תרגום לסדר ראשון:<br />Weakest Precondition</li>
+</ul></div></div><ul class="section img-text"><li class="activity resource modtype_resource " id="module-607386"><div><div class="mod-indent-outer"><div class="mod-indent"></div><div><div class="activityinstance"><a class="" onclick="window.open(&#039;https://moodle.technion.ac.il/mod/resource/view.php?id=607386&amp;redirect=1&#039;); return false;" href="https://moodle.technion.ac.il/mod/resource/view.php?id=607386"><img src="../theme/image.php/fordson/core/1609879116/f/pdf.svg" class="iconlarge activityicon" alt="" role="presentation" aria-hidden="true" /><span class="instancename">מצגת<span class="accesshide " > קובץ</span></span></a> <span class="resourcelinkdetails">5.7MB מסמך PDF</span></div></div></div></div></li><li class="activity resource modtype_resource " id="module-682910"><div><div class="mod-indent-outer"><div class="mod-indent mod-indent-1"></div><div><div class="activityinstance"><a class="" onclick="window.open(&#039;https://moodle.technion.ac.il/mod/resource/view.php?id=682910&amp;redirect=1&#039;); return false;" href="https://moodle.technion.ac.il/mod/resource/view.php?id=682910"><img src="../theme/image.php/fordson/core/1609879116/f/pdf.svg" class="iconlarge activityicon" alt="" role="presentation" aria-hidden="true" /><span class="instancename">מצגת (תמסירים)<span class="accesshide " > קובץ</span></span></a> <span class="resourcelinkdetails">5.7MB מסמך PDF</span></div></div></div></div></li><li class="activity url modtype_url " id="module-802818"><div><div class="mod-indent-outer"><div class="mod-indent mod-indent-1"></div><div><div class="activityinstance"><a class="" onclick="" href="https://moodle.technion.ac.il/mod/url/view.php?id=802818"><img src="../theme/image.php/fordson/url/1609879116/icon.svg" class="iconlarge activityicon" alt="" role="presentation" aria-hidden="true" /><span class="instancename">וידאו<span class="accesshide " > קישור לאתר אינטרנט</span></span></a></div></div></div></div></li><li class="activity assign modtype_assign " id="module-607188"><div><div class="mod-indent-outer"><div class="mod-indent"></div><div><div class="activityinstance"><a class="" onclick="" href="https://moodle.technion.ac.il/mod/assign/view.php?id=607188"><img src="../theme/image.php/fordson/assign/1609879116/icon.svg" class="iconlarge activityicon" alt="" role="presentation" aria-hidden="true" /><span class="instancename">מעבדה 7<span class="accesshide " > מטלה</span></span></a></div></div></div></div></li><li class="activity book modtype_book " id="module-607265"><div><div class="mod-indent-outer"><div class="mod-indent"></div><div><div class="activityinstance"><a class="" onclick="" href="https://moodle.technion.ac.il/mod/book/view.php?id=607265"><img src="../theme/image.php/fordson/book/1609879116/icon.svg" class="iconlarge activityicon" alt="" role="presentation" aria-hidden="true" /><span class="instancename">Z3 Python API Cheatsheet<span class="accesshide " > ספר</span></span></a></div></div></div></div></li><li class="activity assign modtype_assign " id="module-683243"><div><div class="mod-indent-outer"><div class="mod-indent"></div><div><div class="activityinstance"><a class="" onclick="" href="https://moodle.technion.ac.il/mod/assign/view.php?id=683243"><img src="../theme/image.php/fordson/assign/1609879116/icon.svg" class="iconlarge activityicon" alt="" role="presentation" aria-hidden="true" /><span class="instancename">תרגיל בית 3<span class="accesshide " > מטלה</span></span></a></div></div></div></div></li></ul></div></li><li id="section-7" class="section main clearfix" role="region" aria-label="סינתזה; Programming By Example"><span class="hidden sectionname">סינתזה; Programming By Example</span><div class="left side"></div><div class="right side"><img class="icon spacer" width="1" height="1" alt="" aria-hidden="true" src="../theme/image.php/fordson/core/1609879116/spacer" /></div><div class="content"><h3 class="sectionname"><span><a href="view.php?id=5865#section-7">סינתזה; Programming By Example</a></span></h3><div class="section_availability"></div><div class="summary"><div class="no-overflow"><ul>
+<li>מבוא לפרק הסינתזה</li>
+<li>דוגמאות כצורת ספציפיקציה; מוטיבציה</li>
+<li>מבוא לשימוש ב Sketch</li>
+</ul></div></div><ul class="section img-text"><li class="activity resource modtype_resource " id="module-608770"><div><div class="mod-indent-outer"><div class="mod-indent"></div><div><div class="activityinstance"><a class="" onclick="window.open(&#039;https://moodle.technion.ac.il/mod/resource/view.php?id=608770&amp;redirect=1&#039;); return false;" href="https://moodle.technion.ac.il/mod/resource/view.php?id=608770"><img src="../theme/image.php/fordson/core/1609879116/f/pdf.svg" class="iconlarge activityicon" alt="" role="presentation" aria-hidden="true" /><span class="instancename">מצגת<span class="accesshide " > קובץ</span></span></a> <span class="resourcelinkdetails">14.8MB מסמך PDF</span></div></div></div></div></li><li class="activity resource modtype_resource " id="module-684529"><div><div class="mod-indent-outer"><div class="mod-indent mod-indent-1"></div><div><div class="activityinstance"><a class="" onclick="window.open(&#039;https://moodle.technion.ac.il/mod/resource/view.php?id=684529&amp;redirect=1&#039;); return false;" href="https://moodle.technion.ac.il/mod/resource/view.php?id=684529"><img src="../theme/image.php/fordson/core/1609879116/f/pdf.svg" class="iconlarge activityicon" alt="" role="presentation" aria-hidden="true" /><span class="instancename">מצגת (תמסירים)<span class="accesshide " > קובץ</span></span></a> <span class="resourcelinkdetails">14.8MB מסמך PDF</span></div></div></div></div></li><li class="activity url modtype_url " id="module-807029"><div><div class="mod-indent-outer"><div class="mod-indent mod-indent-1"></div><div><div class="activityinstance"><a class="" onclick="" href="https://moodle.technion.ac.il/mod/url/view.php?id=807029"><img src="../theme/image.php/fordson/url/1609879116/icon.svg" class="iconlarge activityicon" alt="" role="presentation" aria-hidden="true" /><span class="instancename">וידאו<span class="accesshide " > קישור לאתר אינטרנט</span></span></a></div></div></div></div></li><li class="activity assign modtype_assign " id="module-608672"><div><div class="mod-indent-outer"><div class="mod-indent"></div><div><div class="activityinstance"><a class="" onclick="" href="https://moodle.technion.ac.il/mod/assign/view.php?id=608672"><img src="../theme/image.php/fordson/assign/1609879116/icon.svg" class="iconlarge activityicon" alt="" role="presentation" aria-hidden="true" /><span class="instancename">מעבדה 8<span class="accesshide " > מטלה</span></span></a></div></div></div></div></li><li class="activity book modtype_book " id="module-684604"><div><div class="mod-indent-outer"><div class="mod-indent"></div><div><div class="activityinstance"><a class="" onclick="" href="https://moodle.technion.ac.il/mod/book/view.php?id=684604"><img src="../theme/image.php/fordson/book/1609879116/icon.svg" class="iconlarge activityicon" alt="" role="presentation" aria-hidden="true" /><span class="instancename">Sketch Cheatsheet<span class="accesshide " > ספר</span></span></a></div></div></div></div></li></ul></div></li><li id="section-8" class="section main clearfix" role="region" aria-label="SyGuS: Syntax-Guided Synthesis"><span class="hidden sectionname">SyGuS: Syntax-Guided Synthesis</span><div class="left side"></div><div class="right side"><img class="icon spacer" width="1" height="1" alt="" aria-hidden="true" src="../theme/image.php/fordson/core/1609879116/spacer" /></div><div class="content"><h3 class="sectionname"><span><a href="view.php?id=5865#section-8">SyGuS: Syntax-Guided Synthesis</a></span></h3><div class="section_availability"></div><div class="summary"><div class="no-overflow"><ul>
+<li>הגדרת מרחב חיפוש – באמצעות דקדוק חופשי-הקשר</li>
+<li>אנומרציה: Top-down לעומת Bottom-up</li>
+<li>ייעול בעזרת גיזום
+<ul>
+<li>Observational equivalence</li>
+</ul>
+</li>
+<li style="text-align: right;">מדוגמאות לספציפיקציה
+<ul>
+<li style="text-align: right;">לולאת CEGIS ויישומה ב Sketch</li>
+</ul>
+</li>
+</ul></div></div><ul class="section img-text"><li class="activity resource modtype_resource " id="module-610314"><div><div class="mod-indent-outer"><div class="mod-indent"></div><div><div class="activityinstance"><a class="" onclick="window.open(&#039;https://moodle.technion.ac.il/mod/resource/view.php?id=610314&amp;redirect=1&#039;); return false;" href="https://moodle.technion.ac.il/mod/resource/view.php?id=610314"><img src="../theme/image.php/fordson/core/1609879116/f/pdf.svg" class="iconlarge activityicon" alt="" role="presentation" aria-hidden="true" /><span class="instancename">מצגת<span class="accesshide " > קובץ</span></span></a> <span class="resourcelinkdetails">14.9MB מסמך PDF</span></div></div></div></div></li><li class="activity resource modtype_resource " id="module-686431"><div><div class="mod-indent-outer"><div class="mod-indent mod-indent-1"></div><div><div class="activityinstance"><a class="" onclick="window.open(&#039;https://moodle.technion.ac.il/mod/resource/view.php?id=686431&amp;redirect=1&#039;); return false;" href="https://moodle.technion.ac.il/mod/resource/view.php?id=686431"><img src="../theme/image.php/fordson/core/1609879116/f/pdf.svg" class="iconlarge activityicon" alt="" role="presentation" aria-hidden="true" /><span class="instancename">מצגת (תמסירים)<span class="accesshide " > קובץ</span></span></a> <span class="resourcelinkdetails">13.4MB מסמך PDF</span></div></div></div></div></li><li class="activity url modtype_url " id="module-812302"><div><div class="mod-indent-outer"><div class="mod-indent mod-indent-1"></div><div><div class="activityinstance"><a class="" onclick="" href="https://moodle.technion.ac.il/mod/url/view.php?id=812302"><img src="../theme/image.php/fordson/url/1609879116/icon.svg" class="iconlarge activityicon" alt="" role="presentation" aria-hidden="true" /><span class="instancename">וידאו<span class="accesshide " > קישור לאתר אינטרנט</span></span></a></div></div></div></div></li><li class="activity assign modtype_assign " id="module-610260"><div><div class="mod-indent-outer"><div class="mod-indent"></div><div><div class="activityinstance"><a class="" onclick="" href="https://moodle.technion.ac.il/mod/assign/view.php?id=610260"><img src="../theme/image.php/fordson/assign/1609879116/icon.svg" class="iconlarge activityicon" alt="" role="presentation" aria-hidden="true" /><span class="instancename">מעבדה 9<span class="accesshide " > מטלה</span></span></a></div></div></div></div></li></ul></div></li><li id="section-10" class="section main clearfix current" role="region" aria-label="Deductive Synthesis"><span class="hidden sectionname">Deductive Synthesis</span><div class="left side"><span class="accesshide " >יחידת־הוראה זו</span></div><div class="right side"><img class="icon spacer" width="1" height="1" alt="" aria-hidden="true" src="../theme/image.php/fordson/core/1609879116/spacer" /></div><div class="content"><h3 class="sectionname"><span><a href="view.php?id=5865#section-10">Deductive Synthesis</a></span></h3><div class="section_availability"></div><div class="summary"><div class="no-overflow"><ul>
+<li>Top-Down Propagation</li>
+<li>גיזום בעזרת TDP
+<ul>
+<li>פסילת תוכניות בעזרת ספציפיקציות לוגיות ו SMT</li>
+</ul>
+</li>
+<li style="text-align: right;">בדיקת-טיפוסים לתכניות חלקיות – bidirectional type checking</li>
+<li style="text-align: right;">Refinement Types</li>
+<li style="text-align: right;">סינתזה לפי Refinement Types תוך שימוש ב TDP
+<ul>
+<li style="text-align: right;">מימוש: Synquid</li>
+</ul>
+</li>
+</ul></div></div><ul class="section img-text"><li class="activity resource modtype_resource " id="module-614272"><div><div class="mod-indent-outer"><div class="mod-indent"></div><div><div class="activityinstance"><a class="" onclick="window.open(&#039;https://moodle.technion.ac.il/mod/resource/view.php?id=614272&amp;redirect=1&#039;); return false;" href="https://moodle.technion.ac.il/mod/resource/view.php?id=614272"><img src="../theme/image.php/fordson/core/1609879116/f/pdf.svg" class="iconlarge activityicon" alt="" role="presentation" aria-hidden="true" /><span class="instancename">מצגת<span class="accesshide " > קובץ</span></span></a> <span class="resourcelinkdetails">5.4MB מסמך PDF</span></div></div></div></div></li><li class="activity resource modtype_resource " id="module-689590"><div><div class="mod-indent-outer"><div class="mod-indent mod-indent-1"></div><div><div class="activityinstance"><a class="" onclick="window.open(&#039;https://moodle.technion.ac.il/mod/resource/view.php?id=689590&amp;redirect=1&#039;); return false;" href="https://moodle.technion.ac.il/mod/resource/view.php?id=689590"><img src="../theme/image.php/fordson/core/1609879116/f/pdf.svg" class="iconlarge activityicon" alt="" role="presentation" aria-hidden="true" /><span class="instancename">מצגת (תמסירים)<span class="accesshide " > קובץ</span></span></a> <span class="resourcelinkdetails">5.2MB מסמך PDF</span></div></div></div></div></li><li class="activity url modtype_url " id="module-816853"><div><div class="mod-indent-outer"><div class="mod-indent mod-indent-1"></div><div><div class="activityinstance"><a class="" onclick="" href="https://moodle.technion.ac.il/mod/url/view.php?id=816853"><img src="../theme/image.php/fordson/url/1609879116/icon.svg" class="iconlarge activityicon" alt="" role="presentation" aria-hidden="true" /><span class="instancename">וידאו<span class="accesshide " > קישור לאתר אינטרנט</span></span></a></div></div></div></div></li><li class="activity assign modtype_assign " id="module-614251"><div><div class="mod-indent-outer"><div class="mod-indent"></div><div><div class="activityinstance"><a class="" onclick="" href="https://moodle.technion.ac.il/mod/assign/view.php?id=614251"><img src="../theme/image.php/fordson/assign/1609879116/icon.svg" class="iconlarge activityicon" alt="" role="presentation" aria-hidden="true" /><span class="instancename">מעבדה 11<span class="accesshide " > מטלה</span></span></a></div></div></div></div></li><li class="activity label modtype_label " id="module-616541"><div><div class="mod-indent-outer"><div class="mod-indent"></div><div><div class="contentwithoutlink "><div class="no-overflow"><div class="no-overflow"><p><span style="color: #008080;">תת־נושא: Unbounded reasoning, loop synthesis, proofs as programs</span></p>
+<ul>
+<li>מאימות לסינתזה (דרך invariant inference)</li>
+<li>חיפוש בסריג</li>
+<li>חיפוש תכנית ושמורה בו-זמנית</li>
+<li>חיפוש תכנית והוכחה בו זמנית
+<ul>
+<li>גזירת תכנית מתוך הוכחה – Manna &amp; Waldinger</li>
+</ul>
+<ul></ul>
+</li>
+<li style="text-align: right;">סיכום פרק הסינתזה</li>
+<li style="text-align: right;">פרויקט גמר: הגדרת דרישות</li>
+</ul>
+<p style="text-align: left;"></p></div></div></div></div></div></div></li><li class="activity resource modtype_resource " id="module-616542"><div><div class="mod-indent-outer"><div class="mod-indent mod-indent-1"></div><div><div class="activityinstance"><a class="" onclick="window.open(&#039;https://moodle.technion.ac.il/mod/resource/view.php?id=616542&amp;redirect=1&#039;); return false;" href="https://moodle.technion.ac.il/mod/resource/view.php?id=616542"><img src="../theme/image.php/fordson/core/1609879116/f/pdf.svg" class="iconlarge activityicon" alt="" role="presentation" aria-hidden="true" /><span class="instancename">מצגת<span class="accesshide " > קובץ</span></span></a> <span class="resourcelinkdetails">15MB מסמך PDF</span></div></div></div></div></li><li class="activity resource modtype_resource " id="module-691896"><div><div class="mod-indent-outer"><div class="mod-indent mod-indent-2"></div><div><div class="activityinstance"><a class="" onclick="window.open(&#039;https://moodle.technion.ac.il/mod/resource/view.php?id=691896&amp;redirect=1&#039;); return false;" href="https://moodle.technion.ac.il/mod/resource/view.php?id=691896"><img src="../theme/image.php/fordson/core/1609879116/f/pdf.svg" class="iconlarge activityicon" alt="" role="presentation" aria-hidden="true" /><span class="instancename">מצגת (תמסירים)<span class="accesshide " > קובץ</span></span></a> <span class="resourcelinkdetails">7.1MB מסמך PDF</span></div></div></div></div></li><li class="activity url modtype_url " id="module-821832"><div><div class="mod-indent-outer"><div class="mod-indent mod-indent-2"></div><div><div class="activityinstance"><a class="" onclick="" href="https://moodle.technion.ac.il/mod/url/view.php?id=821832"><img src="../theme/image.php/fordson/url/1609879116/icon.svg" class="iconlarge activityicon" alt="" role="presentation" aria-hidden="true" /><span class="instancename">וידאו<span class="accesshide " > קישור לאתר אינטרנט</span></span></a></div></div></div></div></li><li class="activity label modtype_label " id="module-616545"><div><div class="mod-indent-outer"><div class="mod-indent"></div><div><div class="contentwithoutlink "><div class="no-overflow"><div class="no-overflow"><hr /></div></div></div></div></div></div></li><li class="activity assign modtype_assign " id="module-616544"><div><div class="mod-indent-outer"><div class="mod-indent"></div><div><div class="activityinstance"><a class="" onclick="" href="https://moodle.technion.ac.il/mod/assign/view.php?id=616544"><img src="../theme/image.php/fordson/assign/1609879116/icon.svg" class="iconlarge activityicon" alt="" role="presentation" aria-hidden="true" /><span class="instancename">פרויקט גמר<span class="accesshide " > מטלה</span></span></a></div></div></div></div></li></ul></div></li></ul></div></div>
+                                
+
+                    </section>
+                    <section data-region="blocks-column" class="hidden-print">
+                        <aside id="block-region-side-pre" class="block-region" data-blockregion="side-pre" data-droptarget="1"><a href="view.php?id=5865#sb-1" class="sr-only sr-only-focusable">דילוג את חדשות אחרונות</a>
+
+<section id="inst290660"
+     class=" block_news_items block  card mb-3"
+     role="complementary"
+     data-block="news_items"
+          aria-labelledby="instance-290660-header"
+     >
+
+    <div class="card-body p-3">
+
+            <h5 id="instance-290660-header" class="card-title d-inline">חדשות אחרונות</h5>
+
+
+        <div class="card-text content mt-3">
+            
+<ul class='unlist'>
+<li class="post"><div class="head clearfix"><div class="date">21 אוק, 12:22</div><div class="name">איתן סינגר</div></div><div class="info"><a href="https://moodle.technion.ac.il/mod/forum/discuss.php?d=538796">ציונים לפרוייקט גמר</a></div></li>
+<li class="post"><div class="head clearfix"><div class="date">24 אוג, 12:48</div><div class="name">איתן סינגר</div></div><div class="info"><a href="https://moodle.technion.ac.il/mod/forum/discuss.php?d=534158">ציונים ש.ב. 3</a></div></li>
+<li class="post"><div class="head clearfix"><div class="date">3 יול, 15:18</div><div class="name">שחר יצחקי</div></div><div class="info"><a href="https://moodle.technion.ac.il/mod/forum/discuss.php?d=527360">פרויקט גמר</a></div></li>
+<li class="post"><div class="head clearfix"><div class="date">18 יונ, 16:47</div><div class="name">איתן סינגר</div></div><div class="info"><a href="https://moodle.technion.ac.il/mod/forum/discuss.php?d=523326">ציונים בתרגיל בית 2</a></div></li>
+<li class="post"><div class="head clearfix"><div class="date">4 יונ, 13:09</div><div class="name">שחר יצחקי</div></div><div class="info"><a href="https://moodle.technion.ac.il/mod/forum/discuss.php?d=519475">תרגיל בית 3</a></div></li>
+</ul>
+
+            <div class="footer"><a href="https://moodle.technion.ac.il/mod/forum/view.php?f=22336">נושאים ישנים יותר לדיון</a> ...</div>
+            
+        </div>
+
+    </div>
+
+</section>
+
+  <span id="sb-1"></span><a href="view.php?id=5865#sb-2" class="sr-only sr-only-focusable">דילוג את ארועים קרבים</a>
+
+<section id="inst290661"
+     class=" block_calendar_upcoming block  card mb-3"
+     role="complementary"
+     data-block="calendar_upcoming"
+          aria-labelledby="instance-290661-header"
+     >
+
+    <div class="card-body p-3">
+
+            <h5 id="instance-290661-header" class="card-title d-inline">ארועים קרבים</h5>
+
+
+        <div class="card-text content mt-3">
+            <div id="calendar-upcoming-block-5ff86eba378745ff86eba378b11" data-template="core_calendar/upcoming_mini">
+    <div class="card-text content calendarwrapper" id="month-upcoming-mini-5ff86eba378745ff86eba378b11" data-context-id="0" data-courseid="5865" data-categoryid="17">
+        <span class="overlay-icon-container hidden" data-region="overlay-icon-container">
+            <span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw "  title="טעינה" aria-label="טעינה"></i></span>
+        </span>
+            אין אירועים קרבים
+    </div>
+</div>
+            <div class="footer"><div class="gotocal"><a href="https://moodle.technion.ac.il/calendar/view.php?view=upcoming&amp;course=5865">צפיה בלוח אירועים...</a></div></div>
+            
+        </div>
+
+    </div>
+
+</section>
+
+  <span id="sb-2"></span><a href="view.php?id=5865#sb-4" class="sr-only sr-only-focusable">דילוג את ניווט</a>
+
+<section id="inst290663"
+     class=" block_navigation block  card mb-3"
+     role="navigation"
+     data-block="navigation"
+          aria-labelledby="instance-290663-header"
+     >
+
+    <div class="card-body p-3">
+
+            <h5 id="instance-290663-header" class="card-title d-inline">ניווט</h5>
+
+
+        <div class="card-text content mt-3">
+            <ul class="block_tree list" role="tree" data-ajax-loader="block_navigation/nav_loader"><li class="type_unknown depth_1 contains_branch" aria-labelledby="label_1_1"><p class="tree_item branch navigation_node" role="treeitem" aria-expanded="true" aria-owns="random5ff86eba378b12_group" data-collapsible="false"><a tabindex="-1" id="label_1_1" href="https://moodle.technion.ac.il/">ראשי</a></p><ul id="random5ff86eba378b12_group" role="group"><li class="type_course depth_2 contains_branch" aria-labelledby="label_2_2"><p class="tree_item branch canexpand" role="treeitem" aria-expanded="false" aria-owns="random5ff86eba378b13_group"><span tabindex="-1" id="label_2_2" title="אתר הקורסים של הטכניון - סמסטר חורף תשפ&quot;א">כלי המערכת</span></p><ul id="random5ff86eba378b13_group" role="group" aria-hidden="true"><li class="type_setting depth_3 item_with_icon" aria-labelledby="label_3_4"><p class="tree_item hasicon" role="treeitem"><a tabindex="-1" id="label_3_4" href="https://moodle.technion.ac.il/tag/search.php"><i class="icon fa fa-fw fa-fw navicon" aria-hidden="true"  ></i><span class="item-content-wrap">תגים</span></a></p></li><li class="type_custom depth_3 item_with_icon" aria-labelledby="label_3_5"><p class="tree_item hasicon" role="treeitem"><a tabindex="-1" id="label_3_5" href="https://moodle.technion.ac.il/calendar/view.php?view=month&amp;course=5865"><i class="icon fa fa-calendar fa-fw navicon" aria-hidden="true"  ></i><span class="item-content-wrap">לוח-שנה</span></a></p></li><li class="type_activity depth_3 item_with_icon" aria-labelledby="label_3_6"><p class="tree_item hasicon" role="treeitem"><a tabindex="-1" id="label_3_6" title="פורום" href="https://moodle.technion.ac.il/mod/forum/view.php?id=2"><img class="icon navicon" alt="פורום" title="פורום" src="../theme/image.php/fordson/forum/1609879116/icon.svg" /><span class="item-content-wrap">הודעות ועידכונים</span></a></p></li><li class="type_activity depth_3 item_with_icon" aria-labelledby="label_3_8"><p class="tree_item hasicon" role="treeitem"><a tabindex="-1" id="label_3_8" title="דף תוכן מעוצב" href="https://moodle.technion.ac.il/mod/page/view.php?id=3611"><img class="icon navicon" alt="דף תוכן מעוצב" title="דף תוכן מעוצב" src="../theme/image.php/fordson/page/1609879116/icon.svg" /><span class="item-content-wrap">Help Desk</span></a></p></li><li class="type_activity depth_3 item_with_icon" aria-labelledby="label_3_9"><p class="tree_item hasicon" role="treeitem"><a tabindex="-1" id="label_3_9" title="פורום" href="https://moodle.technion.ac.il/mod/forum/view.php?id=88184"><img class="icon navicon" alt="פורום" title="פורום" src="../theme/image.php/fordson/forum/1609879116/icon.svg" /><span class="item-content-wrap">פורום תמיכה למורים  בנושא למידה דיגיטלית</span></a></p></li><li class="type_activity depth_3 item_with_icon" aria-labelledby="label_3_10"><p class="tree_item hasicon" role="treeitem"><a tabindex="-1" id="label_3_10" title="קישור לאתר אינטרנט" href="https://moodle.technion.ac.il/mod/url/view.php?id=697"><img class="icon navicon" alt="קישור לאתר אינטרנט" title="קישור לאתר אינטרנט" src="../theme/image.php/fordson/url/1609879116/icon.svg" /><span class="item-content-wrap">טופס לפתיחת קורס</span></a></p></li><li class="type_activity depth_3 item_with_icon" aria-labelledby="label_3_11"><p class="tree_item hasicon" role="treeitem"><a tabindex="-1" id="label_3_11" title="דף תוכן מעוצב" href="https://moodle.technion.ac.il/mod/page/view.php?id=444226"><img class="icon navicon" alt="דף תוכן מעוצב" title="דף תוכן מעוצב" src="../theme/image.php/fordson/page/1609879116/icon.svg" /><span class="item-content-wrap">הנחיות התחברות</span></a></p></li><li class="type_activity depth_3 item_with_icon contains_branch" aria-labelledby="label_3_25"><p class="tree_item hasicon branch" role="treeitem" id="expandable_branch_40_455392" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_40_455392" data-node-key="455392" data-node-type="40"><a tabindex="-1" id="label_3_25" title="בסיס־נתונים" href="https://moodle.technion.ac.il/mod/data/view.php?id=455392"><img class="icon navicon" alt="בסיס־נתונים" title="בסיס־נתונים" src="../theme/image.php/fordson/data/1609879116/icon.svg" /><span class="item-content-wrap">סטודנטים - שאלות נפוצות</span></a></p></li><li class="type_activity depth_3 item_with_icon" aria-labelledby="label_3_28"><p class="tree_item hasicon" role="treeitem"><a tabindex="-1" id="label_3_28" title="דף תוכן מעוצב" href="https://moodle.technion.ac.il/mod/page/view.php?id=622300"><img class="icon navicon" alt="דף תוכן מעוצב" title="דף תוכן מעוצב" src="../theme/image.php/fordson/page/1609879116/icon.svg" /><span class="item-content-wrap">שאלות נפוצות</span></a></p></li><li class="type_activity depth_3 item_with_icon" aria-labelledby="label_3_29"><p class="tree_item hasicon" role="treeitem"><a tabindex="-1" id="label_3_29" title="דף תוכן מעוצב" href="https://moodle.technion.ac.il/mod/page/view.php?id=622301"><img class="icon navicon" alt="דף תוכן מעוצב" title="דף תוכן מעוצב" src="../theme/image.php/fordson/page/1609879116/icon.svg" /><span class="item-content-wrap">קבלת גישת אורח לאתרי קורסים</span></a></p></li></ul></li><li class="type_system depth_2 contains_branch" aria-labelledby="label_2_34"><p class="tree_item branch canexpand" role="treeitem" aria-expanded="true" aria-owns="random5ff86eba378b113_group"><a tabindex="-1" id="label_2_34" href="https://moodle.technion.ac.il/course/index.php">קורסים</a></p><ul id="random5ff86eba378b113_group" role="group"><li class="type_category depth_3 contains_branch" aria-labelledby="label_3_35"><p class="tree_item branch canexpand" role="treeitem" aria-expanded="true" aria-owns="random5ff86eba378b114_group"><span tabindex="-1" id="label_3_35">מדעי המחשב</span></p><ul id="random5ff86eba378b114_group" role="group"><li class="type_category depth_4 contains_branch" aria-labelledby="label_4_36"><p class="tree_item branch" role="treeitem" id="expandable_branch_10_56" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_10_56" data-node-key="56" data-node-type="10"><span tabindex="-1" id="label_4_36">Restored courses</span></p></li><li class="type_course depth_4 item_with_icon" aria-labelledby="label_4_37"><p class="tree_item hasicon" role="treeitem"><a tabindex="-1" id="label_4_37" title="234118 - ארגון ותכנות המחשב - חורף" href="https://moodle.technion.ac.il/course/view.php?id=7881"><i class="icon fa fa-graduation-cap fa-fw navicon" aria-hidden="true"  ></i><span class="item-content-wrap">234118w</span></a></p></li><li class="type_course depth_4 item_with_icon" aria-labelledby="label_4_38"><p class="tree_item hasicon" role="treeitem"><a tabindex="-1" id="label_4_38" title="234125 - אלגוריתמים נומריים - חורף" href="https://moodle.technion.ac.il/course/view.php?id=7853"><i class="icon fa fa-graduation-cap fa-fw navicon" aria-hidden="true"  ></i><span class="item-content-wrap">234125w</span></a></p></li><li class="type_course depth_4 item_with_icon" aria-labelledby="label_4_39"><p class="tree_item hasicon" role="treeitem"><a tabindex="-1" id="label_4_39" title="236363 - מסדי נתונים - חורף" href="https://moodle.technion.ac.il/course/view.php?id=7744"><i class="icon fa fa-graduation-cap fa-fw navicon" aria-hidden="true"  ></i><span class="item-content-wrap">236363w</span></a></p></li><li class="type_course depth_4 item_with_icon" aria-labelledby="label_4_40"><p class="tree_item hasicon" role="treeitem"><a tabindex="-1" id="label_4_40" title="Geometric Learning - 048865 / 236661" href="https://moodle.technion.ac.il/course/view.php?id=7358"><i class="icon fa fa-graduation-cap fa-fw navicon" aria-hidden="true"  ></i><span class="item-content-wrap">048865 / 236661</span></a></p></li><li class="type_course depth_4 item_with_icon" aria-labelledby="label_4_41"><p class="tree_item hasicon" role="treeitem"><a tabindex="-1" id="label_4_41" title="236781 - למידה עמוקה מאיצי - אביב" href="https://moodle.technion.ac.il/course/view.php?id=7332"><i class="icon fa fa-graduation-cap fa-fw navicon" aria-hidden="true"  ></i><span class="item-content-wrap">236781s</span></a></p></li><li class="type_course depth_4 item_with_icon" aria-labelledby="label_4_42"><p class="tree_item hasicon" role="treeitem"><a tabindex="-1" id="label_4_42" title="236703 - תכנות מונחה עצמים - אביב" href="https://moodle.technion.ac.il/course/view.php?id=7331"><i class="icon fa fa-graduation-cap fa-fw navicon" aria-hidden="true"  ></i><span class="item-content-wrap">236703s</span></a></p></li><li class="type_course depth_4 item_with_icon" aria-labelledby="label_4_43"><p class="tree_item hasicon" role="treeitem"><a tabindex="-1" id="label_4_43" title="236621 - נו. מתק. באלגוריתמים - אביב" href="https://moodle.technion.ac.il/course/view.php?id=7330"><i class="icon fa fa-graduation-cap fa-fw navicon" aria-hidden="true"  ></i><span class="item-content-wrap">236621s</span></a></p></li><li class="type_course depth_4 item_with_icon" aria-labelledby="label_4_44"><p class="tree_item hasicon" role="treeitem"><a tabindex="-1" id="label_4_44" title="236522 - אלגו&#039;  בביול חישובית - אביב" href="https://moodle.technion.ac.il/course/view.php?id=7329"><i class="icon fa fa-graduation-cap fa-fw navicon" aria-hidden="true"  ></i><span class="item-content-wrap">236522s</span></a></p></li><li class="type_course depth_4 item_with_icon" aria-labelledby="label_4_45"><p class="tree_item hasicon" role="treeitem"><a tabindex="-1" id="label_4_45" title="236501 - מבוא לבינה מלאכותית - אביב" href="https://moodle.technion.ac.il/course/view.php?id=7328"><i class="icon fa fa-graduation-cap fa-fw navicon" aria-hidden="true"  ></i><span class="item-content-wrap">236501s</span></a></p></li><li class="type_course depth_4 item_with_icon" aria-labelledby="label_4_46"><p class="tree_item hasicon" role="treeitem"><a tabindex="-1" id="label_4_46" title="236359 - אלגוריתמים 2 - אביב" href="https://moodle.technion.ac.il/course/view.php?id=7327"><i class="icon fa fa-graduation-cap fa-fw navicon" aria-hidden="true"  ></i><span class="item-content-wrap">236359s</span></a></p></li><li class="type_course depth_4 item_with_icon" aria-labelledby="label_4_47"><p class="tree_item hasicon" role="treeitem"><a tabindex="-1" id="label_4_47" title="236350 - הגנה ברשתות - אביב" href="https://moodle.technion.ac.il/course/view.php?id=7326"><i class="icon fa fa-graduation-cap fa-fw navicon" aria-hidden="true"  ></i><span class="item-content-wrap">236350s</span></a></p></li><li class="type_course depth_4 item_with_icon" aria-labelledby="label_4_48"><p class="tree_item hasicon" role="treeitem"><a tabindex="-1" id="label_4_48" title="236343 - תורת החישוביות - אביב" href="https://moodle.technion.ac.il/course/view.php?id=7325"><i class="icon fa fa-graduation-cap fa-fw navicon" aria-hidden="true"  ></i><span class="item-content-wrap">236343s</span></a></p></li><li class="type_course depth_4 item_with_icon" aria-labelledby="label_4_49"><p class="tree_item hasicon" role="treeitem"><a tabindex="-1" id="label_4_49" title="236341 - תקשורת באינטרנט - אביב" href="https://moodle.technion.ac.il/course/view.php?id=7324"><i class="icon fa fa-graduation-cap fa-fw navicon" aria-hidden="true"  ></i><span class="item-content-wrap">236341s</span></a></p></li><li class="type_course depth_4 item_with_icon" aria-labelledby="label_4_50"><p class="tree_item hasicon" role="treeitem"><a tabindex="-1" id="label_4_50" title="236334 - מבוא לרשתות מחשבים - אביב" href="https://moodle.technion.ac.il/course/view.php?id=7323"><i class="icon fa fa-graduation-cap fa-fw navicon" aria-hidden="true"  ></i><span class="item-content-wrap">236334s</span></a></p></li><li class="type_course depth_4 item_with_icon" aria-labelledby="label_4_51"><p class="tree_item hasicon" role="treeitem"><a tabindex="-1" id="label_4_51" title="236319 - שפות תכנות - אביב 2020 - ד. לורנץ" href="https://moodle.technion.ac.il/course/view.php?id=7322"><i class="icon fa fa-graduation-cap fa-fw navicon" aria-hidden="true"  ></i><span class="item-content-wrap">236319s</span></a></p></li><li class="type_course depth_4 item_with_icon" aria-labelledby="label_4_52"><p class="tree_item hasicon" role="treeitem"><a tabindex="-1" id="label_4_52" title="236313 - תורת הסיבוכיות - אביב" href="https://moodle.technion.ac.il/course/view.php?id=7321"><i class="icon fa fa-graduation-cap fa-fw navicon" aria-hidden="true"  ></i><span class="item-content-wrap">236313s</span></a></p></li><li class="type_course depth_4 item_with_icon" aria-labelledby="label_4_53"><p class="tree_item hasicon" role="treeitem"><a tabindex="-1" id="label_4_53" title="236267 - מבנה מחשבים - אביב" href="https://moodle.technion.ac.il/course/view.php?id=7320"><i class="icon fa fa-graduation-cap fa-fw navicon" aria-hidden="true"  ></i><span class="item-content-wrap">236267s</span></a></p></li><li class="type_course depth_4 item_with_icon" aria-labelledby="label_4_54"><p class="tree_item hasicon" role="treeitem"><a tabindex="-1" id="label_4_54" title=" 236200 - עיבוד אותות, תמונות - אביב" href="https://moodle.technion.ac.il/course/view.php?id=7319"><i class="icon fa fa-graduation-cap fa-fw navicon" aria-hidden="true"  ></i><span class="item-content-wrap">236200s</span></a></p></li><li class="type_course depth_4 item_with_icon" aria-labelledby="label_4_55"><p class="tree_item hasicon" role="treeitem"><a tabindex="-1" id="label_4_55" title="234292 - לוגיקה במחשב - אביב" href="https://moodle.technion.ac.il/course/view.php?id=7318"><i class="icon fa fa-graduation-cap fa-fw navicon" aria-hidden="true"  ></i><span class="item-content-wrap">234292s</span></a></p></li><li class="type_course depth_4 item_with_icon" aria-labelledby="label_4_56"><p class="tree_item hasicon" role="treeitem"><a tabindex="-1" id="label_4_56" title="234247 - אלגוריתמים 1 - אביב" href="https://moodle.technion.ac.il/course/view.php?id=7317"><i class="icon fa fa-graduation-cap fa-fw navicon" aria-hidden="true"  ></i><span class="item-content-wrap">234247s</span></a></p></li><li class="type_course depth_4 item_with_icon" aria-labelledby="label_4_57"><p class="tree_item hasicon" role="treeitem"><a tabindex="-1" id="label_4_57" title="234221 - מבוא למ&quot;מ נ&#039; - אביב" href="https://moodle.technion.ac.il/course/view.php?id=7316"><i class="icon fa fa-graduation-cap fa-fw navicon" aria-hidden="true"  ></i><span class="item-content-wrap">234221s</span></a></p></li><li class="type_course depth_4 item_with_icon" aria-labelledby="label_4_58"><p class="tree_item hasicon" role="treeitem"><a tabindex="-1" id="label_4_58" title="234141 - קומבינטוריקה למ&quot;מ - אביב" href="https://moodle.technion.ac.il/course/view.php?id=7315"><i class="icon fa fa-graduation-cap fa-fw navicon" aria-hidden="true"  ></i><span class="item-content-wrap">234141s</span></a></p></li><li class="type_course depth_4 item_with_icon" aria-labelledby="label_4_59"><p class="tree_item hasicon" role="treeitem"><a tabindex="-1" id="label_4_59" title="234129 - תורת הקבוצות ואוט&#039; - אביב" href="https://moodle.technion.ac.il/course/view.php?id=7314"><i class="icon fa fa-graduation-cap fa-fw navicon" aria-hidden="true"  ></i><span class="item-content-wrap">234129s</span></a></p></li><li class="type_course depth_4 item_with_icon" aria-labelledby="label_4_60"><p class="tree_item hasicon" role="treeitem"><a tabindex="-1" id="label_4_60" title="234128 - מב&#039; למח&#039; פייתון - אביב" href="https://moodle.technion.ac.il/course/view.php?id=7313"><i class="icon fa fa-graduation-cap fa-fw navicon" aria-hidden="true"  ></i><span class="item-content-wrap">234128s</span></a></p></li><li class="type_course depth_4 item_with_icon" aria-labelledby="label_4_61"><p class="tree_item hasicon" role="treeitem"><a tabindex="-1" id="label_4_61" title="234125 - אלגו&#039; נומריים - אביב" href="https://moodle.technion.ac.il/course/view.php?id=7312"><i class="icon fa fa-graduation-cap fa-fw navicon" aria-hidden="true"  ></i><span class="item-content-wrap">234125s</span></a></p></li><li class="type_course depth_4 item_with_icon" aria-labelledby="label_4_62"><p class="tree_item hasicon" role="treeitem"><a tabindex="-1" id="label_4_62" title="234118 - ארגון ותכנות המחשב - אביב" href="https://moodle.technion.ac.il/course/view.php?id=7311"><i class="icon fa fa-graduation-cap fa-fw navicon" aria-hidden="true"  ></i><span class="item-content-wrap">234118s</span></a></p></li><li class="type_course depth_4 item_with_icon" aria-labelledby="label_4_63"><p class="tree_item hasicon" role="treeitem"><a tabindex="-1" id="label_4_63" title="234304 - פרויקט בבינה מלאכותית ה&#039; - אביב" href="https://moodle.technion.ac.il/course/view.php?id=7285"><i class="icon fa fa-graduation-cap fa-fw navicon" aria-hidden="true"  ></i><span class="item-content-wrap">234304s</span></a></p></li><li class="type_course depth_4 item_with_icon" aria-labelledby="label_4_64"><p class="tree_item hasicon" role="treeitem"><a tabindex="-1" id="label_4_64" title=" 236304 - לוגיקה במחשב - אביב" href="https://moodle.technion.ac.il/course/view.php?id=7132"><i class="icon fa fa-graduation-cap fa-fw navicon" aria-hidden="true"  ></i><span class="item-content-wrap">236304s</span></a></p></li><li class="type_course depth_4 item_with_icon" aria-labelledby="label_4_65"><p class="tree_item hasicon" role="treeitem"><a tabindex="-1" id="label_4_65" title="236363 - מערכות מסד נתוני - אביב 2019-2020" href="https://moodle.technion.ac.il/course/view.php?id=7112"><i class="icon fa fa-graduation-cap fa-fw navicon" aria-hidden="true"  ></i><span class="item-content-wrap">236363s</span></a></p></li><li class="type_course depth_4 item_with_icon" aria-labelledby="label_4_66"><p class="tree_item hasicon" role="treeitem"><a tabindex="-1" id="label_4_66" title="236366 - פרויקט במערכות - חורף" href="https://moodle.technion.ac.il/course/view.php?id=6958"><i class="icon fa fa-graduation-cap fa-fw navicon" aria-hidden="true"  ></i><span class="item-content-wrap">236366w</span></a></p></li><li class="type_course depth_4 item_with_icon" aria-labelledby="label_4_67"><p class="tree_item hasicon" role="treeitem"><a tabindex="-1" id="label_4_67" title="236524 - פרוייקט בביואינפורמטיקה - אביב" href="https://moodle.technion.ac.il/course/view.php?id=6579"><i class="icon fa fa-graduation-cap fa-fw navicon" aria-hidden="true"  ></i><span class="item-content-wrap">236524s</span></a></p></li><li class="type_course depth_4 contains_branch current_branch" aria-labelledby="label_4_68"><p class="tree_item branch active_tree_node canexpand" role="treeitem" aria-expanded="true" aria-owns="random5ff86eba378b146_group"><a tabindex="-1" id="label_4_68" title="236347 - סינתזה של תוכנה והיסק אוטומטי - אביב" href="view.php?id=5865">236347s</a></p><ul id="random5ff86eba378b146_group" role="group"><li class="type_container depth_5 item_with_icon" aria-labelledby="label_5_69"><p class="tree_item hasicon" role="treeitem"><span tabindex="-1" id="label_5_69"><i class="icon fa fa-fw fa-fw navicon" aria-hidden="true"  ></i><span class="item-content-wrap">משתתפים</span></span></p></li><li class="type_structure depth_5 contains_branch" aria-labelledby="label_5_70"><p class="tree_item branch" role="treeitem" id="expandable_branch_30_84023" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_30_84023" data-node-key="84023" data-node-type="30"><a tabindex="-1" id="label_5_70" href="view.php?id=5865#section-0">ימי ד׳, 14:30–16:30</a></p></li><li class="type_structure depth_5 contains_branch" aria-labelledby="label_5_71"><p class="tree_item branch" role="treeitem" id="expandable_branch_30_84024" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_30_84024" data-node-key="84024" data-node-type="30"><a tabindex="-1" id="label_5_71" href="view.php?id=5865#section-1">הרצאת מבוא ומבט־על של התחום</a></p></li><li class="type_structure depth_5 contains_branch" aria-labelledby="label_5_72"><p class="tree_item branch" role="treeitem" id="expandable_branch_30_84025" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_30_84025" data-node-key="84025" data-node-type="30"><a tabindex="-1" id="label_5_72" href="view.php?id=5865#section-2">תחשיב λ</a></p></li><li class="type_structure depth_5 contains_branch" aria-labelledby="label_5_73"><p class="tree_item branch" role="treeitem" id="expandable_branch_30_84026" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_30_84026" data-node-key="84026" data-node-type="30"><a tabindex="-1" id="label_5_73" href="view.php?id=5865#section-3">Dependent Types</a></p></li><li class="type_structure depth_5 contains_branch" aria-labelledby="label_5_74"><p class="tree_item branch" role="treeitem" id="expandable_branch_30_84027" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_30_84027" data-node-key="84027" data-node-type="30"><a tabindex="-1" id="label_5_74" href="view.php?id=5865#section-4">Type Theory</a></p></li><li class="type_structure depth_5 contains_branch" aria-labelledby="label_5_75"><p class="tree_item branch" role="treeitem" id="expandable_branch_30_84028" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_30_84028" data-node-key="84028" data-node-type="30"><a tabindex="-1" id="label_5_75" href="view.php?id=5865#section-5">סמנטיקה פורמלית ואקסיומטית</a></p></li><li class="type_structure depth_5 contains_branch" aria-labelledby="label_5_76"><p class="tree_item branch" role="treeitem" id="expandable_branch_30_84029" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_30_84029" data-node-key="84029" data-node-type="30"><a tabindex="-1" id="label_5_76" href="view.php?id=5865#section-6">Satisfiability Modulo Theory</a></p></li><li class="type_structure depth_5 contains_branch" aria-labelledby="label_5_77"><p class="tree_item branch" role="treeitem" id="expandable_branch_30_84030" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_30_84030" data-node-key="84030" data-node-type="30"><a tabindex="-1" id="label_5_77" href="view.php?id=5865#section-7">סינתזה; Programming By Example</a></p></li><li class="type_structure depth_5 contains_branch" aria-labelledby="label_5_78"><p class="tree_item branch" role="treeitem" id="expandable_branch_30_84031" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_30_84031" data-node-key="84031" data-node-type="30"><a tabindex="-1" id="label_5_78" href="view.php?id=5865#section-8">SyGuS: Syntax-Guided Synthesis</a></p></li><li class="type_structure depth_5 contains_branch" aria-labelledby="label_5_79"><p class="tree_item branch" role="treeitem" id="expandable_branch_30_84033" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_30_84033" data-node-key="84033" data-node-type="30"><a tabindex="-1" id="label_5_79" href="view.php?id=5865#section-10">Deductive Synthesis</a></p></li></ul></li></ul></li><li class="type_category depth_3 contains_branch" aria-labelledby="label_3_81"><p class="tree_item branch" role="treeitem" id="expandable_branch_10_58" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_10_58" data-node-key="58" data-node-type="10"><span tabindex="-1" id="label_3_81">International School of Engineering</span></p></li><li class="type_category depth_3 contains_branch" aria-labelledby="label_3_82"><p class="tree_item branch" role="treeitem" id="expandable_branch_10_70" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_10_70" data-node-key="70" data-node-type="10"><span tabindex="-1" id="label_3_82">אנרגיה</span></p></li><li class="type_category depth_3 contains_branch" aria-labelledby="label_3_83"><p class="tree_item branch" role="treeitem" id="expandable_branch_10_19" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_10_19" data-node-key="19" data-node-type="10"><span tabindex="-1" id="label_3_83">ארכיטקטורה ובינוי ערים</span></p></li><li class="type_category depth_3 contains_branch" aria-labelledby="label_3_84"><p class="tree_item branch" role="treeitem" id="expandable_branch_10_43" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_10_43" data-node-key="43" data-node-type="10"><span tabindex="-1" id="label_3_84">ביולוגיה</span></p></li><li class="type_category depth_3 contains_branch" aria-labelledby="label_3_85"><p class="tree_item branch" role="treeitem" id="expandable_branch_10_84" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_10_84" data-node-key="84" data-node-type="10"><span tabindex="-1" id="label_3_85">היחידה ללימודי המשך ולימודי חוץ</span></p></li><li class="type_category depth_3 contains_branch" aria-labelledby="label_3_86"><p class="tree_item branch" role="treeitem" id="expandable_branch_10_30" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_10_30" data-node-key="30" data-node-type="10"><span tabindex="-1" id="label_3_86">המרכז לקידום הלמידה וההוראה</span></p></li><li class="type_category depth_3 contains_branch" aria-labelledby="label_3_87"><p class="tree_item branch" role="treeitem" id="expandable_branch_10_7" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_10_7" data-node-key="7" data-node-type="10"><span tabindex="-1" id="label_3_87">הנדסה אזרחית וסביבתית</span></p></li><li class="type_category depth_3 contains_branch" aria-labelledby="label_3_88"><p class="tree_item branch" role="treeitem" id="expandable_branch_10_18" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_10_18" data-node-key="18" data-node-type="10"><span tabindex="-1" id="label_3_88">הנדסה ביורפואית</span></p></li><li class="type_category depth_3 contains_branch" aria-labelledby="label_3_89"><p class="tree_item branch" role="treeitem" id="expandable_branch_10_4" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_10_4" data-node-key="4" data-node-type="10"><span tabindex="-1" id="label_3_89">הנדסה כימית</span></p></li><li class="type_category depth_3 contains_branch" aria-labelledby="label_3_90"><p class="tree_item branch" role="treeitem" id="expandable_branch_10_63" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_10_63" data-node-key="63" data-node-type="10"><span tabindex="-1" id="label_3_90">הנדסת אווירונאוטיקה וחלל</span></p></li><li class="type_category depth_3 contains_branch" aria-labelledby="label_3_91"><p class="tree_item branch" role="treeitem" id="expandable_branch_10_20" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_10_20" data-node-key="20" data-node-type="10"><span tabindex="-1" id="label_3_91">הנדסת ביוטכנולוגיה ומזון</span></p></li><li class="type_category depth_3 contains_branch" aria-labelledby="label_3_92"><p class="tree_item branch" role="treeitem" id="expandable_branch_10_5" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_10_5" data-node-key="5" data-node-type="10"><span tabindex="-1" id="label_3_92">הנדסת חשמל</span></p></li><li class="type_category depth_3 contains_branch" aria-labelledby="label_3_93"><p class="tree_item branch" role="treeitem" id="expandable_branch_10_16" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_10_16" data-node-key="16" data-node-type="10"><span tabindex="-1" id="label_3_93">הנדסת מכונות</span></p></li><li class="type_category depth_3 contains_branch" aria-labelledby="label_3_94"><p class="tree_item branch" role="treeitem" id="expandable_branch_10_96" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_10_96" data-node-key="96" data-node-type="10"><span tabindex="-1" id="label_3_94">הנדסת פולימרים</span></p></li><li class="type_category depth_3 contains_branch" aria-labelledby="label_3_95"><p class="tree_item branch" role="treeitem" id="expandable_branch_10_12" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_10_12" data-node-key="12" data-node-type="10"><span tabindex="-1" id="label_3_95">הנדסת תעשיה וניהול</span></p></li><li class="type_category depth_3 contains_branch" aria-labelledby="label_3_96"><p class="tree_item branch" role="treeitem" id="expandable_branch_10_106" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_10_106" data-node-key="106" data-node-type="10"><span tabindex="-1" id="label_3_96">הרשות למחקר פרה-קליני</span></p></li><li class="type_category depth_3 contains_branch" aria-labelledby="label_3_97"><p class="tree_item branch" role="treeitem" id="expandable_branch_10_3" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_10_3" data-node-key="3" data-node-type="10"><span tabindex="-1" id="label_3_97">חינוך למדע וטכנולוגיה</span></p></li><li class="type_category depth_3 contains_branch" aria-labelledby="label_3_98"><p class="tree_item branch" role="treeitem" id="expandable_branch_10_36" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_10_36" data-node-key="36" data-node-type="10"><span tabindex="-1" id="label_3_98">כימיה</span></p></li><li class="type_category depth_3 contains_branch" aria-labelledby="label_3_99"><p class="tree_item branch" role="treeitem" id="expandable_branch_10_21" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_10_21" data-node-key="21" data-node-type="10"><span tabindex="-1" id="label_3_99">לימודים הומניסטיים ואמנויות</span></p></li><li class="type_category depth_3 contains_branch" aria-labelledby="label_3_100"><p class="tree_item branch" role="treeitem" id="expandable_branch_10_13" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_10_13" data-node-key="13" data-node-type="10"><span tabindex="-1" id="label_3_100">מדע והנדסה של חומרים</span></p></li><li class="type_category depth_3 contains_branch" aria-labelledby="label_3_101"><p class="tree_item branch" role="treeitem" id="expandable_branch_10_47" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_10_47" data-node-key="47" data-node-type="10"><span tabindex="-1" id="label_3_101">מינהלה</span></p></li><li class="type_category depth_3 contains_branch" aria-labelledby="label_3_103"><p class="tree_item branch" role="treeitem" id="expandable_branch_10_35" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_10_35" data-node-key="35" data-node-type="10"><span tabindex="-1" id="label_3_103">מתמטיקה</span></p></li><li class="type_category depth_3 contains_branch" aria-labelledby="label_3_104"><p class="tree_item branch" role="treeitem" id="expandable_branch_10_73" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_10_73" data-node-key="73" data-node-type="10"><span tabindex="-1" id="label_3_104">מתמטיקה שימושית</span></p></li><li class="type_category depth_3 contains_branch" aria-labelledby="label_3_105"><p class="tree_item branch" role="treeitem" id="expandable_branch_10_52" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_10_52" data-node-key="52" data-node-type="10"><span tabindex="-1" id="label_3_105">ננו-מדעים וננו טכנולוגיה</span></p></li><li class="type_category depth_3 contains_branch" aria-labelledby="label_3_106"><p class="tree_item branch" role="treeitem" id="expandable_branch_10_14" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_10_14" data-node-key="14" data-node-type="10"><span tabindex="-1" id="label_3_106">פיזיקה</span></p></li><li class="type_category depth_3 contains_branch" aria-labelledby="label_3_108"><p class="tree_item branch" role="treeitem" id="expandable_branch_10_9" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_10_9" data-node-key="9" data-node-type="10"><span tabindex="-1" id="label_3_108">רפואה</span></p></li><li class="type_category depth_3 contains_branch" aria-labelledby="label_3_109"><p class="tree_item branch" role="treeitem" id="expandable_branch_10_40" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_10_40" data-node-key="40" data-node-type="10"><span tabindex="-1" id="label_3_109">תוכניות אקדמיות</span></p></li><li class="type_category depth_3 contains_branch" aria-labelledby="label_3_110"><p class="tree_item branch" role="treeitem" id="expandable_branch_10_100" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_10_100" data-node-key="100" data-node-type="10"><span tabindex="-1" id="label_3_110">תכנית הטכניון למצויינים</span></p></li><li class="type_category depth_3 contains_branch" aria-labelledby="label_3_111"><p class="tree_item branch" role="treeitem" id="expandable_branch_10_122" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_10_122" data-node-key="122" data-node-type="10"><span tabindex="-1" id="label_3_111">הנדסה ימית</span></p></li></ul></li></ul></li></ul>
+            <div class="footer"></div>
+            
+        </div>
+
+    </div>
+
+</section>
+
+  <span id="sb-4"></span><a href="view.php?id=5865#sb-6" class="sr-only sr-only-focusable">דילוג את נגישות</a>
+
+<section id="inst290665"
+     class=" block_accessibility block  card mb-3"
+     role="complementary"
+     data-block="accessibility"
+          aria-labelledby="instance-290665-header"
+     >
+
+    <div class="card-body p-3">
+
+            <h5 id="instance-290665-header" class="card-title d-inline">נגישות</h5>
+
+
+        <div class="card-text content mt-3">
+            <div id="accessibility_controls" class="content"><ul id="block_accessibility_textresize" class="button_row"><li class="access-button"><a title="הקטנת ממדי הגופנים" id="block_accessibility_dec" href="https://moodle.technion.ac.il/blocks/accessibility/changesize.php?redirect=https%3A%2F%2Fmoodle.technion.ac.il%2Fcourse%2Fview.php%3Fid%3D5865&amp;op=dec">א-</a></li><li class="access-button"><a id="block_accessibility_reset" title="אתחול ממדי הגופנים לבררת־מחדל (מוחק הגדרות שמורות)" href="https://moodle.technion.ac.il/blocks/accessibility/changesize.php?redirect=https%3A%2F%2Fmoodle.technion.ac.il%2Fcourse%2Fview.php%3Fid%3D5865&amp;op=reset" class="disabled">א</a></li><li class="access-button"><a title="הגדלת ממדי הגופנים" id="block_accessibility_inc" href="https://moodle.technion.ac.il/blocks/accessibility/changesize.php?redirect=https%3A%2F%2Fmoodle.technion.ac.il%2Fcourse%2Fview.php%3Fid%3D5865&amp;op=inc">א+</a></li><li class="access-button"><a title="שמירת הגדרות" id="block_accessibility_save" href="https://moodle.technion.ac.il/blocks/accessibility/database.php?redirect=https%3A%2F%2Fmoodle.technion.ac.il%2Fcourse%2Fview.php%3Fid%3D5865&amp;op=save&amp;size=1&amp;scheme=1">&nbsp</a></li></ul><ul id="block_accessibility_changecolour"><li class="access-button"><a title="צבעי בררת־מחדל" id="block_accessibility_colour1" href="https://moodle.technion.ac.il/blocks/accessibility/changecolour.php?redirect=https%3A%2F%2Fmoodle.technion.ac.il%2Fcourse%2Fview.php%3Fid%3D5865&amp;scheme=1" class="disabled">R</a></li><li class="access-button"><a title="ניגודיות נמוכה 1" id="block_accessibility_colour2" href="https://moodle.technion.ac.il/blocks/accessibility/changecolour.php?redirect=https%3A%2F%2Fmoodle.technion.ac.il%2Fcourse%2Fview.php%3Fid%3D5865&amp;scheme=2">א</a></li><li class="access-button"><a title="ניגודיות נמוכה 2" id="block_accessibility_colour3" href="https://moodle.technion.ac.il/blocks/accessibility/changecolour.php?redirect=https%3A%2F%2Fmoodle.technion.ac.il%2Fcourse%2Fview.php%3Fid%3D5865&amp;scheme=3">א</a></li><li class="access-button"><a title="ניגודיות גבוהה" id="block_accessibility_colour4" href="https://moodle.technion.ac.il/blocks/accessibility/changecolour.php?redirect=https%3A%2F%2Fmoodle.technion.ac.il%2Fcourse%2Fview.php%3Fid%3D5865&amp;scheme=4">א</a></li></ul><div id="block_accessibility_message" class="clearfix"></div><input type="button" value="הצגת סרגל נגישות" id="block_accessibility_launchtoolbar" class="atbar_control access-button" /><span class="atbar-always"><input type="checkbox" value="1" id="atbar_auto" name="atbar_auto" class="atbar_control" /><label for="atbar_auto" class="atbar_control">(תמיד?)</label></span></div><span id="loader-icon"></span>
+            <div class="footer"></div>
+            
+        </div>
+
+    </div>
+
+</section>
+
+  <span id="sb-6"></span><a href="view.php?id=5865#sb-7" class="sr-only sr-only-focusable">דילוג את הורדת תכנים</a>
+
+<section id="inst290666"
+     class=" block_material_download block  card mb-3"
+     role="complementary"
+     data-block="material_download"
+          aria-labelledby="instance-290666-header"
+     >
+
+    <div class="card-body p-3">
+
+            <h5 id="instance-290666-header" class="card-title d-inline">הורדת תכנים</h5>
+
+
+        <div class="card-text content mt-3">
+            24 קבצים<br />
+            <div class="footer">
+                    <form onsubmit="this.action = document.getElementById('filename').value">
+                        <select id="filename">
+                            <option value="#">בחר...</option>
+                            <option  title="הרצאת מבוא ומבט־על של התחום"  value="https://moodle.technion.ac.il/blocks/material_download/download_materialien.php?courseid=5865&ccsectid=1">קבצים מ- הרצאת מבוא&hellip;התחום</option><option  title="תחשיב λ"  value="https://moodle.technion.ac.il/blocks/material_download/download_materialien.php?courseid=5865&ccsectid=2">קבצים מ- תחשיב λ</option><option  title="Dependent Types"  value="https://moodle.technion.ac.il/blocks/material_download/download_materialien.php?courseid=5865&ccsectid=3">קבצים מ- Dependent Types</option><option  title="Type Theory"  value="https://moodle.technion.ac.il/blocks/material_download/download_materialien.php?courseid=5865&ccsectid=4">קבצים מ- Type Theory</option><option  title="סמנטיקה פורמלית ואקסיומטית"  value="https://moodle.technion.ac.il/blocks/material_download/download_materialien.php?courseid=5865&ccsectid=5">קבצים מ- סמנטיקה&hellip;�סיומטית</option><option  title="Satisfiability Modulo Theory"  value="https://moodle.technion.ac.il/blocks/material_download/download_materialien.php?courseid=5865&ccsectid=6">קבצים מ- Satisfiability Modulo Theory</option><option  title="סינתזה; Programming By Example"  value="https://moodle.technion.ac.il/blocks/material_download/download_materialien.php?courseid=5865&ccsectid=7">קבצים מ- סינתזה;&hellip;Example</option><option  title="SyGuS: Syntax-Guided Synthesis"  value="https://moodle.technion.ac.il/blocks/material_download/download_materialien.php?courseid=5865&ccsectid=8">קבצים מ- SyGuS: Syntax-Guided Synthesis</option><option  title="CEGIS: Counterexample-Guided Synthesis"  value="https://moodle.technion.ac.il/blocks/material_download/download_materialien.php?courseid=5865&ccsectid=9">קבצים מ- CEGIS:&hellip;Synthesis</option><option  title="Deductive Synthesis"  value="https://moodle.technion.ac.il/blocks/material_download/download_materialien.php?courseid=5865&ccsectid=10">קבצים מ- Deductive Synthesis</option>
+                            <option value="https://moodle.technion.ac.il/blocks/material_download/download_materialien.php?courseid=5865&ccsectid=0">הורדת כל הקבצים</option>
+                        </select>
+                       <input type = "button" value = "הורדה" onclick="window.location.href=document.getElementById('filename').value" />
+                   </form></div>
+            
+        </div>
+
+    </div>
+
+</section>
+
+  <span id="sb-7"></span></aside>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+
+        <div id="nav-drawer" data-region="drawer" class="d-print-none moodle-has-zindex closed" aria-hidden="true" tabindex="-1">
+            <nav class="list-group" aria-label="236347s">
+                <a class="list-group-item list-group-item-action active" href="view.php?id=5865" data-key="coursehome" data-isexpandable="0" data-indent="0" data-showdivider="0" data-type="60" data-nodetype="0" data-collapse="0" data-forceopen="1" data-isactive="1" data-hidden="0" data-preceedwithhr="0" >
+                    <div class="ml-0">
+                        <div class="media">
+                            <span class="media-left">
+                                <i class="icon fa fa-graduation-cap fa-fw " aria-hidden="true"  ></i>
+                            </span>
+                            <span class="media-body font-weight-bold">236347s</span>
+                        </div>
+                    </div>
+                </a>
+                <a class="list-group-item list-group-item-action " href="view.php?id=5865#section-0" data-key="84023" data-isexpandable="0" data-indent="0" data-showdivider="0" data-type="30" data-nodetype="1" data-collapse="0" data-forceopen="0" data-isactive="0" data-hidden="0" data-preceedwithhr="0" data-parent-key="5865">
+                    <div class="ml-0">
+                        <div class="media">
+                            <span class="media-left">
+                                <i class="icon fa fa-folder-o fa-fw " aria-hidden="true"  ></i>
+                            </span>
+                            <span class="media-body ">ימי ד׳, 14:30–16:30</span>
+                        </div>
+                    </div>
+                </a>
+                <a class="list-group-item list-group-item-action " href="view.php?id=5865#section-1" data-key="84024" data-isexpandable="0" data-indent="0" data-showdivider="0" data-type="30" data-nodetype="1" data-collapse="0" data-forceopen="0" data-isactive="0" data-hidden="0" data-preceedwithhr="0" data-parent-key="5865">
+                    <div class="ml-0">
+                        <div class="media">
+                            <span class="media-left">
+                                <i class="icon fa fa-folder-o fa-fw " aria-hidden="true"  ></i>
+                            </span>
+                            <span class="media-body ">הרצאת מבוא ומבט־על של התחום</span>
+                        </div>
+                    </div>
+                </a>
+                <a class="list-group-item list-group-item-action " href="view.php?id=5865#section-2" data-key="84025" data-isexpandable="0" data-indent="0" data-showdivider="0" data-type="30" data-nodetype="1" data-collapse="0" data-forceopen="0" data-isactive="0" data-hidden="0" data-preceedwithhr="0" data-parent-key="5865">
+                    <div class="ml-0">
+                        <div class="media">
+                            <span class="media-left">
+                                <i class="icon fa fa-folder-o fa-fw " aria-hidden="true"  ></i>
+                            </span>
+                            <span class="media-body ">תחשיב λ</span>
+                        </div>
+                    </div>
+                </a>
+                <a class="list-group-item list-group-item-action " href="view.php?id=5865#section-3" data-key="84026" data-isexpandable="0" data-indent="0" data-showdivider="0" data-type="30" data-nodetype="1" data-collapse="0" data-forceopen="0" data-isactive="0" data-hidden="0" data-preceedwithhr="0" data-parent-key="5865">
+                    <div class="ml-0">
+                        <div class="media">
+                            <span class="media-left">
+                                <i class="icon fa fa-folder-o fa-fw " aria-hidden="true"  ></i>
+                            </span>
+                            <span class="media-body ">Dependent Types</span>
+                        </div>
+                    </div>
+                </a>
+                <a class="list-group-item list-group-item-action " href="view.php?id=5865#section-4" data-key="84027" data-isexpandable="0" data-indent="0" data-showdivider="0" data-type="30" data-nodetype="1" data-collapse="0" data-forceopen="0" data-isactive="0" data-hidden="0" data-preceedwithhr="0" data-parent-key="5865">
+                    <div class="ml-0">
+                        <div class="media">
+                            <span class="media-left">
+                                <i class="icon fa fa-folder-o fa-fw " aria-hidden="true"  ></i>
+                            </span>
+                            <span class="media-body ">Type Theory</span>
+                        </div>
+                    </div>
+                </a>
+                <a class="list-group-item list-group-item-action " href="view.php?id=5865#section-5" data-key="84028" data-isexpandable="0" data-indent="0" data-showdivider="0" data-type="30" data-nodetype="1" data-collapse="0" data-forceopen="0" data-isactive="0" data-hidden="0" data-preceedwithhr="0" data-parent-key="5865">
+                    <div class="ml-0">
+                        <div class="media">
+                            <span class="media-left">
+                                <i class="icon fa fa-folder-o fa-fw " aria-hidden="true"  ></i>
+                            </span>
+                            <span class="media-body ">סמנטיקה פורמלית ואקסיומטית</span>
+                        </div>
+                    </div>
+                </a>
+                <a class="list-group-item list-group-item-action " href="view.php?id=5865#section-6" data-key="84029" data-isexpandable="0" data-indent="0" data-showdivider="0" data-type="30" data-nodetype="1" data-collapse="0" data-forceopen="0" data-isactive="0" data-hidden="0" data-preceedwithhr="0" data-parent-key="5865">
+                    <div class="ml-0">
+                        <div class="media">
+                            <span class="media-left">
+                                <i class="icon fa fa-folder-o fa-fw " aria-hidden="true"  ></i>
+                            </span>
+                            <span class="media-body ">Satisfiability Modulo Theory</span>
+                        </div>
+                    </div>
+                </a>
+                <a class="list-group-item list-group-item-action " href="view.php?id=5865#section-7" data-key="84030" data-isexpandable="0" data-indent="0" data-showdivider="0" data-type="30" data-nodetype="1" data-collapse="0" data-forceopen="0" data-isactive="0" data-hidden="0" data-preceedwithhr="0" data-parent-key="5865">
+                    <div class="ml-0">
+                        <div class="media">
+                            <span class="media-left">
+                                <i class="icon fa fa-folder-o fa-fw " aria-hidden="true"  ></i>
+                            </span>
+                            <span class="media-body ">סינתזה; Programming By Example</span>
+                        </div>
+                    </div>
+                </a>
+                <a class="list-group-item list-group-item-action " href="view.php?id=5865#section-8" data-key="84031" data-isexpandable="0" data-indent="0" data-showdivider="0" data-type="30" data-nodetype="1" data-collapse="0" data-forceopen="0" data-isactive="0" data-hidden="0" data-preceedwithhr="0" data-parent-key="5865">
+                    <div class="ml-0">
+                        <div class="media">
+                            <span class="media-left">
+                                <i class="icon fa fa-folder-o fa-fw " aria-hidden="true"  ></i>
+                            </span>
+                            <span class="media-body ">SyGuS: Syntax-Guided Synthesis</span>
+                        </div>
+                    </div>
+                </a>
+                <a class="list-group-item list-group-item-action " href="view.php?id=5865#section-10" data-key="84033" data-isexpandable="0" data-indent="0" data-showdivider="0" data-type="30" data-nodetype="1" data-collapse="0" data-forceopen="0" data-isactive="0" data-hidden="0" data-preceedwithhr="0" data-parent-key="5865">
+                    <div class="ml-0">
+                        <div class="media">
+                            <span class="media-left">
+                                <i class="icon fa fa-folder-o fa-fw " aria-hidden="true"  ></i>
+                            </span>
+                            <span class="media-body ">Deductive Synthesis</span>
+                        </div>
+                    </div>
+                </a>
+            </nav>
+            <nav class="list-group mt-1" aria-label="מערכת">
+                <a class="list-group-item list-group-item-action " href="https://moodle.technion.ac.il/" data-key="home" data-isexpandable="0" data-indent="0" data-showdivider="1" data-type="1" data-nodetype="1" data-collapse="0" data-forceopen="1" data-isactive="0" data-hidden="0" data-preceedwithhr="0" >
+                    <div class="ml-0">
+                        <div class="media">
+                            <span class="media-left">
+                                <i class="icon fa fa-home fa-fw " aria-hidden="true"  ></i>
+                            </span>
+                            <span class="media-body ">ראשי</span>
+                        </div>
+                    </div>
+                </a>
+                <a class="list-group-item list-group-item-action " href="https://moodle.technion.ac.il/calendar/view.php?view=month&amp;course=5865" data-key="calendar" data-isexpandable="0" data-indent="0" data-showdivider="0" data-type="60" data-nodetype="0" data-collapse="0" data-forceopen="0" data-isactive="0" data-hidden="0" data-preceedwithhr="0" data-parent-key="1">
+                    <div class="ml-0">
+                        <div class="media">
+                            <span class="media-left">
+                                <i class="icon fa fa-calendar fa-fw " aria-hidden="true"  ></i>
+                            </span>
+                            <span class="media-body ">לוח-שנה</span>
+                        </div>
+                    </div>
+                </a>
+            </nav>
+        </div>
+
+        
+
+    
+    <footer id="page-footer" class="py-3 text-light">
+        <div class="container">
+    
+            <div id="course-footer"></div>
+    
+            <div class="row">
+    
+                    <div class="col-md-8">
+                        <div class="text_to_html"><p style="text-align:right;">שימו לב, חלק מהפעולות לא נתמכות בדפדפן IE. מומלץ להיכנס מדפדפנים כרום או פיירפוקס.</p><ul><li><a href="https://moodle.technion.ac.il/mod/page/view.php?id=3611" target="_blank" rel="noreferrer noopener">יצירת קשר</a></li><li><a href="https://promoteach.technion.ac.il" target="_blank" rel="noreferrer noopener">המרכז לקידום הלמידה וההוראה</a></li><li><a href="https://moodle.technion.ac.il/pluginfile.php/1078582/block_html/content/%D7%94%D7%A6%D7%94%D7%A8%D7%AA%20%D7%A0%D7%92%D7%99%D7%A9%D7%95%D7%AA.pdf">הצהרת נגישות</a></li><li><a target="_blank" href="http://accessibility.net.technion.ac.il/" rel="noreferrer noopener">נגישות בקמפוס</a></li><li><a href="https://technion.ac.il">אתר הטכניון</a></li><li><a target="_blank" href="http://www.technion.ac.il/%D7%9E%D7%A0%D7%99%D7%A2%D7%AA-%D7%94%D7%98%D7%A8%D7%93%D7%94-%D7%9E%D7%99%D7%A0%D7%99%D7%AA-%D7%91%D7%98%D7%9B%D7%A0%D7%99%D7%95%D7%9F/" rel="noreferrer noopener">מדריך טלפונים פנימי</a></li><li><a target="_blank" href="http://www.technion.ac.il/%D7%9E%D7%A0%D7%99%D7%A2%D7%AA-%D7%94%D7%98%D7%A8%D7%93%D7%94-%D7%9E%D7%99%D7%A0%D7%99%D7%AA-%D7%91%D7%98%D7%9B%D7%A0%D7%99%D7%95%D7%9F/" rel="noreferrer noopener">מניעת הטרדה מינית</a></li><li><a href="https://download.teamviewer.com/download/version_11x/TeamViewer_Setup.exe">הורדת TeamViewer</a></li></ul></div>
+    
+                        <div class="logininfo">אתם משתמשים כרגע בגישת אורחים (<a href="https://moodle.technion.ac.il/login/index.php">התחברות</a>)</div>
+    
+                        <div class="homelink"><a href="https://moodle.technion.ac.il/">ראשי</a></div>
+    
+    
+                    </div>
+    
+                    <div class="col-md-4">
+                        <div class="brandbox">
+    
+                            <h3>המרכז לקידום הלמידה וההוראה</h3>
+                                <ul class="footercontact">
+                                    <li><i class="fa fa-globe"></i>  https://promoteach.technion.ac.il</li>
+                                    <li><i class="fa fa-envelope"></i>  moodle-support-l @ listserv.technion.ac.il</li>
+                                    
+                                </ul>
+    
+                            
+    
+                        </div>
+                    </div>
+    
+            </div>
+            <nav class="nav navbar-nav d-md-none">
+                    <ul class="list-unstyled pt-3">
+                                        <li><a href="https://moodle.technion.ac.il/course/index.php" title="קורסים">קורסים</a></li>
+                                        <li><a href="https://moodle.technion.ac.il/mod/forum/view.php?id=88184" title="למרצים ומתרגלים">למרצים ומתרגלים</a></li>
+                                    <li>
+                                        <ul class="list-unstyled ml-3">
+                                                            <li><a href="https://moodle.technion.ac.il/mod/forum/view.php?id=88184" title="פורום תמיכה לצוותי הוראה">פורום תמיכה לצוותי הוראה</a></li>
+                                                            <li><a href="http://techwww.technion.ac.il/cgi-bin/courses/moodle.pl" title="טופס פתיחת קורס">טופס פתיחת קורס</a></li>
+                                                            <li><a href="https://moodle.technion.ac.il/course/view.php?id=357&amp;username=guest" title="אתר הדרכה למרצים ומתרגלים">אתר הדרכה למרצים ומתרגלים</a></li>
+                                                            <li><a href="https://moodle.technion.ac.il/mod/url/view.php?id=865807" title="הקלטות ימי עיון מרצים לקראת חורף תשפא">הקלטות ימי עיון מרצים לקראת חורף תשפא</a></li>
+                                                            <li><a href="https://moodle.technion.ac.il/mod/url/view.php?id=865804" title="הקלטות ימי עיון מתרגלים לקראת חורף תשפא">הקלטות ימי עיון מתרגלים לקראת חורף תשפא</a></li>
+                                                            <li><a href="http://library.technion.ac.il/he/Pages/Help/Fair_Use_Research.aspx" title="זכויות יוצרים ושימוש הוגן">זכויות יוצרים ושימוש הוגן</a></li>
+                                                            <li><a href="http://www.admin.technion.ac.il/dpcalendar/" title="לוח שנה אקדמית">לוח שנה אקדמית</a></li>
+                                                            <li><a href="https://moodle.technion.ac.il/mod/page/view.php?id=3611" title="צרו קשר">צרו קשר</a></li>
+                                        </ul>
+                                    </li>
+                                        <li><a href="https://moodle.technion.ac.il/mod/page/view.php?id=444226" title="לסטודנטים">לסטודנטים</a></li>
+                                    <li>
+                                        <ul class="list-unstyled ml-3">
+                                                            <li><a href="https://moodle.technion.ac.il/mod/page/view.php?id=444226" title="הנחיות לאיפוס סיסמה">הנחיות לאיפוס סיסמה</a></li>
+                                                            <li><a href="https://moodle.technion.ac.il/mod/page/view.php?id=622300" title="שאלות נפוצות">שאלות נפוצות</a></li>
+                                                            <li><a href="http://techwww.technion.ac.il/cgi-bin/courses/courses.pl?Language=HEBREW" title="רישום לאתרי קורסים דרך רשימת תפוצה">רישום לאתרי קורסים דרך רשימת תפוצה</a></li>
+                                                            <li><a href="http://www.admin.technion.ac.il/dpcalendar/Student.html" title="לוח שנה אקדמית">לוח שנה אקדמית</a></li>
+                                                            <li><a href="https://multimedia.net.technion.ac.il/" title="אתר הקורסים המצולמים">אתר הקורסים המצולמים</a></li>
+                                                            <li><a href="https://moodle.technion.ac.il/mod/page/view.php?id=3611" title="צרו קשר">צרו קשר</a></li>
+                                                            <li><a href="https://moodle.technion.ac.il/mod/page/view.php?id=819491" title="הנחיות לסריקת מסמכים והגשתם">הנחיות לסריקת מסמכים והגשתם</a></li>
+                                        </ul>
+                                    </li>
+                                        <li><a href="view.php?id=5865#" title="שפת ממשק">עברית ‎(he)‎</a></li>
+                                    <li>
+                                        <ul class="list-unstyled ml-3">
+                                                            <li><a href="https://moodle.technion.ac.il/course/view.php?id=5865&amp;lang=he" title="עברית ‎(he)‎">עברית ‎(he)‎</a></li>
+                                                            <li><a href="https://moodle.technion.ac.il/course/view.php?id=5865&amp;lang=en" title="English ‎(en)‎">English ‎(en)‎</a></li>
+                                        </ul>
+                                    </li>
+                    </ul>
+            </nav>
+            <div class="tool_dataprivacy"><a href="https://moodle.technion.ac.il/admin/tool/dataprivacy/summary.php">מדיניות שמירת מידע ופרטיות</a></div><a href="https://download.moodle.org/mobile?version=2019052002.04&amp;lang=he&amp;iosappid=633359593&amp;androidappid=com.moodle.moodlemobile">הורדת היישומון Moodle mobile</a>
+            <script type="text/javascript">
+//<![CDATA[
+var require = {
+    baseUrl : 'https://moodle.technion.ac.il/lib/requirejs.php/1609877076/',
+    // We only support AMD modules with an explicit define() statement.
+    enforceDefine: true,
+    skipDataMain: true,
+    waitSeconds : 0,
+
+    paths: {
+        jquery: 'https://moodle.technion.ac.il/lib/javascript.php/1609877076/lib/jquery/jquery-3.2.1.min',
+        jqueryui: 'https://moodle.technion.ac.il/lib/javascript.php/1609877076/lib/jquery/ui-1.12.1/jquery-ui.min',
+        jqueryprivate: 'https://moodle.technion.ac.il/lib/javascript.php/1609877076/lib/requirejs/jquery-private'
+    },
+
+    // Custom jquery config map.
+    map: {
+      // '*' means all modules will get 'jqueryprivate'
+      // for their 'jquery' dependency.
+      '*': { jquery: 'jqueryprivate' },
+      // Stub module for 'process'. This is a workaround for a bug in MathJax (see MDL-60458).
+      '*': { process: 'core/first' },
+
+      // 'jquery-private' wants the real jQuery module
+      // though. If this line was not here, there would
+      // be an unresolvable cyclic dependency.
+      jqueryprivate: { jquery: 'jquery' }
+    }
+};
+
+//]]>
+</script>
+<script type="text/javascript" src="../lib/javascript.php/1609877076/lib/requirejs/require.min.js"></script>
+<script type="text/javascript">
+//<![CDATA[
+M.util.js_pending("core/first");require(['core/first'], function() {
+;
+require(["media_videojs/loader"], function(loader) {
+    loader.setUp(function(videojs) {
+        videojs.options.flash.swf = "https://moodle.technion.ac.il/media/player/videojs/videojs/video-js.swf";
+
+    });
+});;
+
+require([
+    'jquery',
+    'core_calendar/selectors',
+    'core_calendar/events',
+], function(
+    $,
+    CalendarSelectors,
+    CalendarEvents
+) {
+    var root = $('#month-upcoming-mini-5ff86eba378745ff86eba378b11');
+
+    $('body').on(CalendarEvents.filterChanged, function(e, data) {
+        M.util.js_pending("month-upcoming-mini-5ff86eba378745ff86eba378b11-filterChanged");
+
+        // A filter value has been changed.
+        // Find all matching cells in the popover data, and hide them.
+        var target = $("#month-upcoming-mini-5ff86eba378745ff86eba378b11").find(CalendarSelectors.eventType[data.type]);
+
+        var transitionPromise = $.Deferred();
+        if (data.hidden) {
+            transitionPromise.then(function() {
+                return target.slideUp('fast').promise();
+            });
+        } else {
+            transitionPromise.then(function() {
+                return target.slideDown('fast').promise();
+            });
+        }
+
+        transitionPromise.then(function() {
+            M.util.js_complete("month-upcoming-mini-5ff86eba378745ff86eba378b11-filterChanged");
+
+            return;
+        });
+
+        transitionPromise.resolve();
+    });
+});
+;
+
+require(['jquery', 'core_calendar/calendar_view'], function($, CalendarView) {
+    CalendarView.init($("#calendar-upcoming-block-5ff86eba378745ff86eba378b11"), 'upcoming');
+});
+;
+function legacy_activity_onclick_handler_1(e) { e.halt(); window.open('https://moodle.technion.ac.il/mod/url/view.php?id=698&redirect=1'); return false; };
+function legacy_activity_onclick_handler_2(e) { e.halt(); window.open('https://moodle.technion.ac.il/mod/resource/view.php?id=134771&redirect=1'); return false; };
+M.util.js_pending('block_navigation/navblock'); require(['block_navigation/navblock'], function(amd) {amd.init("290663"); M.util.js_complete('block_navigation/navblock');});;
+M.util.js_pending('block_settings/settingsblock'); require(['block_settings/settingsblock'], function(amd) {amd.init("290664", null); M.util.js_complete('block_settings/settingsblock');});;
+
+require(['jquery'], function($) {
+    $('#single_select5ff86eba378b151').change(function() {
+        var ignore = $(this).find(':selected').attr('data-ignore');
+        if (typeof ignore === typeof undefined) {
+            $('#single_select_f5ff86eba378b150').submit();
+        }
+    });
+});
+;
+
+require(['jquery'], function($) {
+    $('#single_select5ff86eba378b157').change(function() {
+        var ignore = $(this).find(':selected').attr('data-ignore');
+        if (typeof ignore === typeof undefined) {
+            $('#single_select_f5ff86eba378b156').submit();
+        }
+    });
+});
+;
+
+require(['theme_boost/loader']);
+require(['jquery','theme_boost/tooltip'], function($){$('[data-tooltip="tooltip"]').tooltip()});
+require(['theme_boost/drawer'], function(mod) {
+    mod.init();
+});
+;
+M.util.js_pending('core/notification'); require(['core/notification'], function(amd) {amd.init(1003037, []); M.util.js_complete('core/notification');});;
+M.util.js_pending('core/log'); require(['core/log'], function(amd) {amd.setConfig({"level":"warn"}); M.util.js_complete('core/log');});;
+M.util.js_pending('core/page_global'); require(['core/page_global'], function(amd) {amd.init(); M.util.js_complete('core/page_global');});M.util.js_complete("core/first");
+});
+//]]>
+</script>
+<script type="text/javascript" src="../lib/javascript.php/1609877076/theme/fordson/javascript/scrolltotop.js"></script>
+<script type="text/javascript" src="../lib/javascript.php/1609877076/theme/fordson/javascript/scrollspy.js"></script>
+<script type="text/javascript" src="../lib/javascript.php/1609877076/theme/fordson/javascript/blockslider.js"></script>
+<script type="text/javascript" src="../lib/javascript.php/1609877076/theme/fordson/javascript/courseblock.js"></script>
+<script type="text/javascript" src="../lib/javascript.php/1609877076/course/format/topics/format.js"></script>
+<script type="text/javascript">
+//<![CDATA[
+M.str = {"moodle":{"lastmodified":"\u05e9\u05d9\u05e0\u05d5\u05d9 \u05d0\u05d7\u05e8\u05d5\u05df","name":"\u05e9\u05dd","error":"\u05d8\u05e2\u05d5\u05ea","info":"\u05de\u05d9\u05d3\u05e2","yes":"\u05db\u05df","no":"\u05dc\u05d0","ok":"\u05d0\u05d9\u05e9\u05d5\u05e8","viewallcourses":"\u05e6\u05e4\u05d9\u05d4 \u05d1\u05db\u05dc \u05d4\u05e7\u05d5\u05e8\u05e1\u05d9\u05dd","cancel":"\u05d1\u05d9\u05d8\u05d5\u05dc","confirm":"\u05d0\u05d9\u05e9\u05d5\u05e8","areyousure":"\u05d4\u05d0\u05dd \u05d0\u05ea\/\u05d4 \u05d1\u05d8\u05d5\u05d7\/\u05d4?","closebuttontitle":"\u05e1\u05d2\u05d9\u05e8\u05d4","unknownerror":"\u05e9\u05d2\u05d9\u05d0\u05d4 \u05dc\u05d0 \u05d9\u05d3\u05d5\u05e2\u05d4"},"repository":{"type":"\u05e1\u05d5\u05d2","size":"\u05d2\u05d5\u05d3\u05dc","invalidjson":"\u05ea\u05e7\u05dc\u05ea \u05ea\u05e7\u05e9\u05d5\u05e8\u05ea. \u05d0\u05e0\u05d0 \u05d4\u05ea\u05d7\u05d1\u05e8\u05d5 \u05e9\u05d5\u05d1 \u05dc\u05de\u05e2\u05e8\u05db\u05ea.","nofilesattached":"\u05dc\u05d0 \u05e0\u05d1\u05d7\u05e8\u05d5 \u05e7\u05d1\u05e6\u05d9\u05dd","filepicker":"\u05d1\u05d7\u05d9\u05e8\u05ea \u05e7\u05d5\u05d1\u05e5","logout":"\u05d4\u05ea\u05e0\u05ea\u05e7\u05d5\u05ea","nofilesavailable":"\u05de\u05d0\u05d2\u05e8 \u05d4\u05e7\u05d1\u05e6\u05d9\u05dd \u05e8\u05d9\u05e7","norepositoriesavailable":"\u05de\u05e6\u05d8\u05e2\u05e8\u05d9\u05dd, \u05d0\u05e3 \u05d0\u05d7\u05d3 \u05de\u05d4\u05de\u05d0\u05d2\u05e8\u05d9\u05dd \u05d4\u05e0\u05d5\u05db\u05d7\u05d9\u05d9\u05dd \u05e9\u05dc\u05da \u05d9\u05db\u05d5\u05dc \u05dc\u05d4\u05d7\u05d6\u05d9\u05e8 \u05e7\u05d1\u05e6\u05d9\u05dd \u05d1\u05ea\u05d1\u05e0\u05d9\u05ea \u05d4\u05de\u05d1\u05d5\u05e7\u05e9\u05ea","fileexistsdialogheader":"\u05e7\u05d1\u05e6\u05d9\u05dd \u05e7\u05d9\u05d9\u05de\u05d9\u05dd","fileexistsdialog_editor":"\u05e7\u05d5\u05d1\u05e5 \u05d1\u05e2\u05dc \u05e9\u05dd \u05d6\u05d4\u05d4 \u05e6\u05d5\u05e8\u05e3 \u05db\u05d1\u05e8 \u05dc\u05ea\u05d5\u05db\u05df \u05e9\u05d4\u05d9\u05e0\u05da \u05e2\u05d5\u05de\u05d3\/\u05ea \u05dc\u05e2\u05e8\u05d5\u05da.","fileexistsdialog_filemanager":"\u05e7\u05d5\u05d1\u05e5 \u05d1\u05e2\u05dc \u05e9\u05dd \u05d6\u05d4\u05d4 \u05e7\u05d9\u05d9\u05dd \u05d1\u05de\u05e2\u05e8\u05db\u05ea","renameto":"\u05e9\u05d9\u05e0\u05d5\u05d9 \u05e9\u05dd \u05dc: \"{$a}\"","referencesexist":"{$a} \u05e7\u05d1\u05e6\u05d9\u05dd \u05de\u05e7\u05d5\u05e9\u05e8\u05d9\u05dd \u05dc\u05e7\u05d5\u05d1\u05e5 \u05d6\u05d4, \u05d4\u05de\u05e9\u05de\u05e9 \u05db\u05de\u05e7\u05d5\u05e8 \u05e9\u05dc\u05d4\u05dd","select":"\u05d1\u05d7\u05d9\u05e8\u05d4"},"admin":{"confirmdeletecomments":"\u05d4\u05d9\u05e0\u05da \u05e2\u05d5\u05de\u05d3 \u05dc\u05de\u05d7\u05d5\u05e7 \u05d4\u05e2\u05e8\u05d5\u05ea, \u05d4\u05d0\u05dd \u05d0\u05ea\u05d4 \u05d1\u05d8\u05d5\u05d7?","confirmation":"\u05d0\u05d9\u05e9\u05d5\u05e8"},"block_accessibility":{"saved":"\u05d4\u05d4\u05d2\u05d3\u05e8\u05d5\u05ea \u05e0\u05e9\u05de\u05e8\u05d5","jsnosave":"\u05d4\u05ea\u05e8\u05d7\u05e9\u05d4 \u05e9\u05d2\u05d9\u05d0\u05d4 \u05d1\u05e2\u05ea \u05e2\u05d3\u05db\u05d5\u05df \u05d4\u05d4\u05d2\u05d3\u05e8\u05d5\u05ea","reset":"\u05e0\u05de\u05d7\u05e7\u05d5 \u05d4\u05d4\u05d2\u05d3\u05e8\u05d5\u05ea","jsnosizereset":"\u05d4\u05ea\u05e8\u05d7\u05e9\u05d4 \u05e9\u05d2\u05d9\u05d0\u05d4 \u05d1\u05e2\u05ea \u05d0\u05ea\u05d7\u05d5\u05dc \u05de\u05de\u05d3\u05d9 \u05d4\u05d2\u05d5\u05e4\u05e0\u05d9\u05dd","jsnocolourreset":"\u05d4\u05ea\u05e8\u05d7\u05e9\u05d4 \u05e9\u05d2\u05d9\u05d0\u05d4 \u05d1\u05e2\u05ea \u05d4\u05e1\u05e8\u05ea \u05d4\u05e6\u05d1\u05e2","jsnosize":"\u05d4\u05ea\u05e8\u05d7\u05e9\u05d4 \u05e9\u05d2\u05d9\u05d0\u05d4 \u05d1\u05e2\u05ea \u05e2\u05d3\u05db\u05d5\u05df \u05de\u05de\u05d3\u05d9 \u05d4\u05d2\u05d5\u05e4\u05e0\u05d9\u05dd","jsnocolour":"\u05d4\u05ea\u05e8\u05d7\u05e9\u05d4 \u05e9\u05d2\u05d9\u05d0\u05d4 \u05d1\u05e2\u05ea \u05e2\u05d3\u05db\u05d5\u05df \u05d4\u05e6\u05d1\u05e2","jsnotloggedin":"\u05d4\u05ea\u05e8\u05d7\u05e9\u05d4 \u05e9\u05d2\u05d9\u05d0\u05d4. \u05d0\u05e0\u05d0 \u05d1\u05d3\u05e7\u05d5 \u05d0\u05dd \u05d0\u05ea\u05dd \u05e2\u05d3\u05d9\u05d9\u05df \u05de\u05d7\u05d5\u05d1\u05e8\u05d9\u05dd \u05dc\u05de\u05e2\u05e8\u05db\u05ea.","launchtoolbar":"\u05d4\u05e6\u05d2\u05ea \u05e1\u05e8\u05d2\u05dc \u05e0\u05d2\u05d9\u05e9\u05d5\u05ea"}};
+//]]>
+</script>
+<script type="text/javascript">
+//<![CDATA[
+(function() {Y.use("moodle-filter_glossary-autolinker",function() {M.filter_glossary.init_filter_autolinking({"courseid":0});
+});
+Y.use("moodle-filter_mathjaxloader-loader",function() {M.filter_mathjaxloader.configure({"mathjaxconfig":"\nMathJax.Hub.Config({\n    config: [\"Accessible.js\", \"Safe.js\"],\n    errorSettings: { message: [\"!\"] },\n    skipStartupTypeset: true,\n    messageStyle: \"none\"\n});\n","lang":"he"});
+});
+ M.util.js_pending('random5ff86eba378b148'); Y.use('block_accessibility', function(Y) { M.block_accessibility.init(Y, false, "290665");  M.util.js_complete('random5ff86eba378b148'); });
+M.util.help_popups.setup(Y);
+ M.util.js_pending('random5ff86eba378b158'); Y.on('domready', function() { M.util.js_complete("init");  M.util.js_complete('random5ff86eba378b158'); });
+})();
+//]]>
+</script>
+
+    
+        </div>
+    
+    </footer>
+
+</div>
+
+<a href="view.php?id=5865#" id="back-to-top" class="btn btn-primary btn-lg" role="button" title="חזרה לראש הדף"><i class="fa fa-chevron-circle-up" aria-hidden="true"></i></a>
+
+</body>
+</html>
