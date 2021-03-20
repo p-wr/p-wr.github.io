@@ -136,3 +136,10 @@
 .CodeMirror-lines {
     padding-bottom: 75% !important;
 }
+
+.CodeMirror .folded {
+    font-size: 130%;
+    text-shadow: 0 0 #888;
+    position: relative;
+    top: 3px;
+}

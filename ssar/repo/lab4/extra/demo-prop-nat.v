@@ -79,7 +79,7 @@ Section Naturals.
   | le_S : forall m : nat, n <= m -> n <= S m
   *)
 
-  Fixpoint le_0 n : 0 <= n := (*🍆*)
+  Fixpoint le_0 n : 0 <= n :=  (*🍆*)
     match n with
     | 0 => le_n 0
     | S k => le_S 0 k (le_0 k)
@@ -99,7 +99,7 @@ Section Naturals.
     ex_intro : forall x : A, P x -> exists y, P y
   *)
     
-  Definition base : forall n, n = 0 \/ exists k, n = 1 + k := (*🍩*)
+  Definition base : forall n, n = 0 \/ exists k, n = 1 + k :=  (*🍩*)
     fun n => match n with
       0 => or_introl (eq_refl 0)
     | S k => or_intror (ex_intro 
@@ -128,16 +128,16 @@ Section Naturals.
   
   Variable n : nat.
   
-  Eval cbn in 1 + n.
-  Eval cbn in n + 1.
+  Eval cbn in 0 + n.
+  Eval cbn in n + 0.
   
-  Lemma plus_1_n : 1 + n = S n.
-  Proof.
+  Lemma plus_0_n : 0 + n = n.
+  Proof. (*☕️*)
     reflexivity.
   Qed.
   
-  Lemma plus_n_1 : n + 1 = S n.
-  Proof.
+  Lemma plus_n_0 : n + 0 = n.
+  Proof. (*🍺*)
     induction n.
     - simpl. reflexivity.
     - simpl. rewrite IHn0. reflexivity.
