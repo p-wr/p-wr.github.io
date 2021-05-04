@@ -81,6 +81,10 @@
       'ex2/bonus.v':           ssar + '/ex2/src/bonus.v'
     };
 
+    var special_actions = {
+      'lab4/demo-prop-nat.v': foldAll
+    };
+
     var reset = false;
 
     function markLocallyModified() {
@@ -99,7 +103,11 @@
     }
 
     function openResource(filename) {
-      fetchResource(filename).then(txt => coq.provider.snippets[0].load(txt, filename));
+      fetchResource(filename).then(txt => {
+        coq.provider.snippets[0].load(txt, filename);
+        var action = special_actions[filename];
+        if (action) action();
+      });
       setCaption(filename);
     }
 
