@@ -2,6 +2,8 @@ Set Implicit Arguments.
 Require Import Arith.
 Import Nat.
 
+Require Import Lia.
+
 
 
   (* Definition of divisibility + some syntactic sugar *)
@@ -10,7 +12,7 @@ Import Nat.
 
   Lemma divides_refl : forall n, (n | n).
   Proof.
-    exists 1. firstorder.
+    exists 1. lia.
   Qed.
 
 
@@ -23,8 +25,60 @@ Import Nat.
     | step_b : forall a b, a < b -> step (a, b) (a, b - a).
 
 
-    Require Import Lia.
-  
+		(* Off-the-shelf definition of tc *)
+    Section ReflexiveTransitiveClosureDef.
+
+      Variable D : Set.
+      Variable R : D -> D -> Prop.
+
+      Inductive tc : D -> D -> Prop :=
+        tc_refl : forall s, tc s s
+      | tc_step : forall s u t, tc s u -> R u t -> tc s t.
+
+    End ReflexiveTransitiveClosureDef.
+
+
+    Lemma gcd_positive a b a' b' :
+    	a > 0 /\ b > 0 ->
+    	tc step (a, b) (a', b') ->
+    	a' > 0 /\ b' > 0.
+    Proof.
+    	intros [A B] H.
+      induction H.
+      (* Oops *)
+    Abort.
+    
+    Definition inv (s : state) :=
+    	let (a, b) := s in a > 0 /\ b > 0.
+      
+      
+    Lemma gcd_positive s s' :
+    	inv s -> tc step s s' -> inv s'.
+    Proof.
+    	intros I H.
+      induction H.
+      - assumption.
+      - apply IHtc in I.
+      	destruct H0.
+        + unfold inv in *. lia.
+        + unfold inv in *. lia.
+   	Qed.
+      
+    
+    (* You might be tempted to try this. However, it fails.
+    Lemma gcd_positive s s' a b a' b' :
+    	s = (a,b) -> s' = (a',b') ->
+      a > 0 /\ b > 0 ->
+      tc step s s' ->
+      a' > 0 /\ b' > 0.
+    Proof.
+    	intros S S' [A B] H.
+      induction H.
+      - subst. inversion S'. subst. split; assumption.
+      - (oops)
+    *)
+    
+    
     Lemma div_inv a b a' b' : step (a, b) (a', b') ->
             forall z,  (z | a) /\ (z | b)  <->  (z | a') /\ (z | b').
     Proof.
