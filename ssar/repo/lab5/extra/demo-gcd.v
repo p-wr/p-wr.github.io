@@ -23,7 +23,7 @@ Import Nat.
     | step_b : forall a b, a < b -> step (a, b) (a, b - a).
 
 
-    Require Import Omega.
+    Require Import Lia.
   
     Lemma div_inv a b a' b' : step (a, b) (a', b') ->
             forall z,  (z | a) /\ (z | b)  <->  (z | a') /\ (z | b').
@@ -31,10 +31,10 @@ Import Nat.
       intro H. inversion H.
       - subst. firstorder.
         + exists (x0 - x). rewrite mul_sub_distr_l. firstorder.
-        + exists (x0 + x). rewrite mul_add_distr_l. omega.
+        + exists (x0 + x). rewrite mul_add_distr_l. lia.
       - subst. firstorder.
         + exists (x - x0). rewrite mul_sub_distr_l. firstorder. (*   firstorder also works, *)
-        + exists (x0 + x). rewrite mul_add_distr_l. firstorder. (* <- when Omega is loaded  *)
+        + exists (x0 + x). rewrite mul_add_distr_l. firstorder. (* <- when Lia is loaded  *)
     Qed.
 
   
