@@ -1,5 +1,5 @@
 {
   "dependencies": {
-    "wacoq": "file:../jscoq+wacoq/wacoq-0.12.1.tgz"
+    "wacoq": "^0.15.0"
   }
 }
