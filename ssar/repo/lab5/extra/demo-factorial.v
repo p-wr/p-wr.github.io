@@ -108,7 +108,8 @@ Proof.
     + simpl. trivial.
     + simpl. simpl in H1.
       assumption.
-  - eapply inv_inv with s0.  (* `with` fills missing holes *)
+  - apply inv_inv with s0.  (* `with` fills missing holes *)
+    (* try also: `eapply inv_inv` instead *)
     + eassumption.
     + assumption.
 Qed.
