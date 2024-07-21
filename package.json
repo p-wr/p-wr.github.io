@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@jscoq/software-foundations": "^0.17.1",
     "jquery": "^3.7.1",
     "jscoq": "^0.17.1"
   }
