@@ -50,8 +50,11 @@
   </div> <!-- /#code-wrapper -->
   </div> <!-- /#ide-wrapper -->
 
-  <script src="/node_modules/wacoq/ui-js/jscoq-loader.js" type="text/javascript"></script>
-  <script type="text/javascript">
+  <link rel="stylesheet" type="text/css" href="/node_modules/jscoq/dist/frontend/index.css">
+
+  <script type="module">
+    import '/node_modules/jquery/dist/jquery.min.js';
+    import { JsCoq, CmCoqProvider } from '/node_modules/jscoq/jscoq.js';
 
     var jscoq_ids  = ['workspace'];
     var jscoq_opts = {
@@ -91,11 +94,11 @@
 
     function markLocallyModified() {
       var lfs = CmCoqProvider.getLocalFileStore();
-      for (let item of $('[data-filename]')) {
-        let fn = $(item).attr('data-filename');
+      for (let item of document.querySelectorAll('[data-filename]')) {
+        let fn = item.getAttribute('data-filename');
         lfs.getItem(fn).then(content => { 
-          if (content) $(item).attr('data-modified', 'true'); 
-          else $(item).removeAttr('data-modified');
+          if (content) item.setAttribute('data-modified', 'true'); 
+          else item.removeAttribute('data-modified');
         });
       }
     }
