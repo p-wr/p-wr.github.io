@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "wacoq": "^0.15.0"
+    "jquery": "^3.7.1",
+    "jscoq": "^0.17.1"
   }
 }
