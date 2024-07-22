@@ -59,11 +59,12 @@
     var jscoq_ids  = ['workspace'];
     var jscoq_opts = {
         backend: 'wa',
-        prelaunch:    true,
-        prelude:      true,
-        all_pkgs:     ['coq', 'software-foundations'],
-        file_dialog:  true,
-        editor:       { mode: { 'company-coq': true } },
+        prelaunch:     true,
+        prelude:       true,
+        implicit_libs: true,
+        all_pkgs:      ['coq', 'software-foundations'],
+        file_dialog:   true,
+        editor:        { mode: { 'company-coq': true } },
 
         node_modules_path: '/node_modules/'
     };
