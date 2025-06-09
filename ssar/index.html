@@ -4,7 +4,7 @@
     <meta http-equiv="content-type" content="text/html;charset=utf-8" />
     <meta name="description" content="An Online IDE for the Coq Theorem Prover" />
 
-    <!-- 
+    <!-- dev-only -->
     <script src="./node_modules/nwjs-kremlin/reload.js"></script>
     <script type="text/javascript">
     Reload.ignore('coq-external', 'coq-pkgs', 'ui-external');
@@ -24,6 +24,7 @@
                        <span class="caption"></span></div>
       <div id="lab-menu">
         <ul class="resources">
+          <!-- These keys refer to URLs in `lab_resources` below -->
           <li data-filename="prelab/even-odd.v">     <b><i>Pre-lab:</i></b> <code>even-odd.v</code>        <button class="revert"></button> </li>
           <li data-filename="lab2/stlc.v">           <b>Lab #2:</b>         <code>stlc.v</code>            <button class="revert"></button> </li>
           <li data-filename="lab3/vecn.v">           <b>Lab #3:</b>         <code>vecn.v</code>            <button class="revert"></button> </li>
@@ -32,7 +33,7 @@
           <li data-filename="ex2/lists.v">           <b>HW #2: </b>         <code>lists.v</code>           <button class="revert"></button> </li>
           <li data-filename="ex2/euclid.v">          <b></b>                <code>euclid.v</code>          <button class="revert"></button> </li>
           <li data-filename="ex2/imp.v">             <b></b>                <code>imp.v</code>             <button class="revert"></button> </li>
-          <li data-filename="ex2/challenge_pred.v">  <b></b>                <code>challenge-pred.v</code>  <button class="revert"></button> </li>
+          <li data-filename="ex2/challenge-church.v"><b></b>                <code>challenge-church.v</code><button class="revert"></button> </li>
           <li data-filename="lab5/mccarthy.v">       <b>Lab #5:</b>         <code>mccarthy.v</code>        <button class="revert"></button> </li>
           <li data-filename="lab5/demo-factorial.v"> <b></b>                <code>demo-factorial.v</code>  <button class="revert"></button> </li>
           <li data-filename="lab5/demo-gcd.v">       <b></b>                <code>demo-gcd.v</code>        <button class="revert"></button> </li>
@@ -87,7 +88,8 @@
       'ex2/lists.v':           ssar + '/ex2/src/lists.v',
       'ex2/euclid.v':          ssar + '/ex2/src/euclid.v',
       'ex2/imp.v':             ssar + '/ex2/src/imp.v',
-      'ex2/bonus.v':           ssar + '/ex2/src/bonus.v'
+      'ex2/bonus.v':           ssar + '/ex2/src/bonus.v',
+      'ex2/challenge-church.v': ssar + '/ex2/src/challenge_church.v'
     };
 
     var special_actions = {
